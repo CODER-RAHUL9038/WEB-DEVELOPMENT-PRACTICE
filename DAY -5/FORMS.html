@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+        <!--Second method to add css-->
+        <style>
+            h1{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>My name is Rahul</h1>
+        <form action="F:\WEB DEVELOPMENT">
+            <div>
+                <label for="username"> Ente The username :</label>
+                <input type="text" id="username" placeholder="username"> 
+            </div>
+
+            <div>
+                <label for="password"> Enter the Password :</label>
+                <input type="password" id="password" placeholder="Password"> 
+            </div>
+
+            <div>
+                <label for="number"> Enter the Number :</label>
+                <input type="number" id="number" placeholder="Enter phone Number"> 
+            </div>
+                
+            <div>
+                <label for="Time">Time :</label>
+                <input type="datetime-local"  id="Time" placeholder="Date and Time">
+            </div>
+                
+            <div>
+                <label for="colour">colour :</label>
+                <input type="color" id="color" placeholder="Choose colour"> 
+            </div>
+
+            <div>
+                <label for="file">Photo :</label>
+                <input type="file" id="file" placeholder="Choose File"> 
+            </div>    
+
+            <div>
+                <label for="Date"> Enter the Date :</label>
+                <input type="date" id="Date" placeholder="Please Enter the date">
+            </div>
+             
+            <div>
+                <label for="age">Enter the Age :</label>
+                <input type="number" id="age" placeholder="50">
+            </div>
+            <div>
+                <button>submit</button>
+            </div>
+
+            <!--Button types-->
+            <button type="reset">Reset</button>
+            <button type="menu">Menu    </button>
+            <input type="button" value="click me">
+            <input type="submit" >
+
+            <!--Name Attributes-->
+            <div>
+                <!--1st method called inline method to add css but not recommeded-->
+                <label for="age" style="color: blue;">Enter the age :</label>
+                <input type="number" id="age" placeholder="25" name="age">
+            </div>
+           
+            <hr>
+
+            </form>
+
+                <!--Name Attribute -->
+            <form action="https://www.youtube.com/results">
+                
+                <label for="search">Ask me anything</label>
+                <input type="text"  id="search" placeholder=" Youtube Search" name="search_query">
+                <button>Submit</button>
+            </form>
+
+            
+            <form action="https://www.google.com/search">
+                <label>Google Search</label>
+                <input type="text" placeholder="Search Google or type URL" name="q">
+                <button>Submit</button>
+
+            </form>
+            <hr>
+            <form action="https://www.amazon.in/s">
+                <label>Amazon Search</label>
+                <input type="text" placeholder="Search Amazon.in" name="k">
+                <button>Submit</button>
+
+
+
+            </form>
+            <!--CHECKBOX -->
+            <form action="/action">
+                <input type="checkbox" name="age" id="age" >
+                <label for="age"> I am 18+
+                <button>submit</button>
+                <input type="radio" name="apple" id="apple">
+                <label for="apple">Apple</label>
+
+                    <!-- MULTIPLE RADIO -->
+                <div>
+                    <input type="radio" name=" fruit" id="apple" value="apple">
+                    <label for="apple">Apple</label>
+                    <input type="radio" name=" fruit" id="mango" value="mango">
+                    <label for="apple">mango</label>
+                    <input type="radio" name=" fruit" id="banana" value="banana">
+                    <label for="apple">banana</label>
+                    <button>submit</button>
+                </div>
+                <div>
+                    <!-- MULTIPLE CHECKBOX -->
+                    choose your subject :
+                    <input type="checkbox" name="subjects" id=" math" value="math">
+                    <label for="math ">Math</label>
+                    <input type="checkbox" name="subjects" id=" science" value="science">
+                    <label for="science ">science</label>
+                    <input type="checkbox" name="subjects" id=" english" value="english">
+                    <label for="english ">Math</label>
+                   
+
+                </div>
+                <hr>
+
+                 <!--SELECT -->
+                <div>
+                    choose your Profession :
+                    <select name="Profession" id="Profession">
+                        <option > Select your option</option>
+                        <!--Teacher pre selected using selected attribute-->
+                        <option value="Teacher" selected> Teacher</option>
+                        <option value="Doc"> Doctor</option>
+                        <option value="Dev"> Developer</option>
+                        <option value="Doc"> Doctor</option>
+                    </select>
+
+                </div>
+                <hr>
+                <div>
+                    <label for="volume">Select the volume :</label>
+                    <input type="range" min="0" max="100" value="100"  name="vol" id="volume "/>
+                    <button>submit</button>
+                </div>
+                <hr>
+
+                <!--Text area-->
+                <div>
+                    <label for="feedback">Enter your valuable feedback :</label>
+                    <textarea name="feedback" id="feedback" rows="5" cols="50"></textarea>
+                    <!--inline style-->
+                    <button style="color: azure; background-color: blue;">submit</button>
+                </div>
+                
+             
+
+            </form>
+
+    </body>
+</html>
