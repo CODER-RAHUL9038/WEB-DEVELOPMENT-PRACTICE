@@ -24,3 +24,25 @@ nav a{
     color: rgb(10, 40, 232);
     
 }
+p+h3{
+    text-decoration: underline;
+}
+.upvote+button{
+    color: blue;
+    background-color: cornflowerblue;
+    
+}
+div>input{
+    background-color: darkgray;
+    color: darksalmon;
+}
+input[type="text"]{
+    color: red;
+}
+input[type="password"]{
+    color: green;
+}
+
+input[type]{
+    background-color: ghostwhite;
+}
