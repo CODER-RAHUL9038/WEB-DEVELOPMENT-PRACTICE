@@ -15,3 +15,15 @@ h1{
     color: white
     ;
 }
+ /* Applying color a pargraph inside a div whose id is myId using id selector*/
+ #myId{
+    color: green;
+ }
+/* solving same problem using attribute method */
+ div[id="myId"]{
+    color: red
+ }
+ /*  USING DESCENDANT SELECTOR*/
+ div p{
+    color: green;
+ }
