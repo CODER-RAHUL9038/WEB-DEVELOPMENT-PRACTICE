@@ -16,3 +16,11 @@ h1,h3{
     background-color: green;
     color: aliceblue;
 }
+.anchor a{
+    color: purple;
+    background-color: yellow;
+}
+nav a{
+    color: rgb(10, 40, 232);
+    
+}
