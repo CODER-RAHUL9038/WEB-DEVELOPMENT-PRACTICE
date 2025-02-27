@@ -14,7 +14,7 @@ h1,h3{
     background-color: white;
 }
 #signup{ 
-    color: white;
+
     background-color:  #b92b27;
 }
 /* CLASS SELECTOR*/
@@ -63,7 +63,7 @@ input[type]{
     background-color: ghostwhite;
 }
 
-/*  PSEUDO CLASS- HOVER */
+/*  PSEUDO CLASS- HOVER - but login button hover will not change as we have used #(id) and the specificty of id is ver high, hence unchanged  */
 button:hover{
     background-color: black;
     color: white;
@@ -72,3 +72,34 @@ h3:hover{
     text-decoration: none;
 }
 
+/* Pseudo Active */
+button:active{
+    background-color: pink;
+    color: black;
+}
+p:active{
+    font-weight: bold;
+    color: green;
+
+}
+
+/*  USING PEUDO CHECKED*/
+input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+}
+
+/* NTH OF TYPE PSEUDO CODE*/
+div:nth-of-type(2n+1){
+    background-color: blanchedalmond;
+}
+/* Pseudo Classes*/
+h1::first-letter{
+    color: green;
+}
+#param::first-line{
+    color: blue;
+}
+#param::selection{
+    background-color: rgb(45, 132, 55);
+}
