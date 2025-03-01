@@ -91,7 +91,7 @@ input[type="radio"]:checked + label{
 
 /* NTH OF TYPE PSEUDO CODE*/
 div:nth-of-type(2n+1){
-    background-color: blanchedalmond;
+    background-color:aqua;
 }
 /* Pseudo Classes*/
 h1::first-letter{
