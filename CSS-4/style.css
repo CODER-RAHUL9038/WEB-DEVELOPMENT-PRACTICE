@@ -1,0 +1,26 @@
+
+/*  ALPHA CHANNEL FOR - color opacity  */
+div{
+    height: 200px;
+    width: 200px;
+    background-color: #4dff4d;
+   margin-top: 10px;
+   margin: 0 auto;
+   transition: margin-top 2s ease-in-out 0.2s;
+   transform: rotate(45deg);
+}
+
+/* TRANSITION  */
+div:hover{
+   margin-top: 300px;
+   background-color: aqua;
+}
+
+
+/*  For Elements opacity  */
+#opacity{
+    background-color: #ffa511;
+    opacity: 1;
+
+}
+
