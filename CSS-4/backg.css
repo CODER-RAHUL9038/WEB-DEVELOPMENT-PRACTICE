@@ -1,0 +1,15 @@
+section{
+    margin-top: 100px;
+
+}
+
+div{
+    height: 500px;
+    width: 800px;
+    color: white;
+    background-color: green;
+    margin: 10px auto;
+    background-image: url(bg.jpg);
+    background-size: cover;
+
+}

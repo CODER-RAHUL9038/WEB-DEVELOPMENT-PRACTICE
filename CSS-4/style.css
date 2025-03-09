@@ -1,5 +1,8 @@
 
 /*  ALPHA CHANNEL FOR - color opacity  */
+section{
+    margin-top: 100px;
+}
 div{
     height: 200px;
     width: 200px;
@@ -8,6 +11,7 @@ div{
    margin: 0 auto;
    transition: margin-top 2s ease-in-out 0.2s;
    transform: rotate(45deg);
+   box-shadow: 10px 10px 5  px green;
 }
 
 /* TRANSITION  */

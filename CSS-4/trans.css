@@ -8,7 +8,7 @@ div{
     text-align: center;
     background-color: #7aa874;
     border: 2px solid black;
-    margin: 10px;
+    margin: 10px auto;
     
 }
 div:nth-of-type(2n){
@@ -19,6 +19,33 @@ div:nth-of-type(3n){
 }
 
 /* TRANSFORM */
+/* ROTATE */
 #one{
     transform: rotate(45deg);
 }
+
+/* TRANSFORM SCALE */
+#two{
+    /* transform: scale(1);
+    transform: scale(0.5,2); */
+    transform:scaley(0.5);
+    /* transform: scaleX(2); */
+}
+
+  /* TRANSFORM TRANSLATE */
+  #three{
+    /* transform: translate(100px,100px); */
+    transform: translate(-100px);
+  }
+
+    /* SKEW */
+  #four{
+    transform: skew(-30deg);
+  }
+
+  /* FULL TRANSFORM PROPERTY */
+  #five{
+    transform: rotate(30deg) translate(110px);
+
+  }
+  
