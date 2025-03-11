@@ -1,0 +1,31 @@
+#container{
+    height: 400px;
+    width: 400px;
+    background-color: azure;
+    border: 2px solid lightskyblue;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+#container div{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(33, 176, 195);
+    font-size: 50px;
+    border: 2px solid black; 
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    border-radius: 10%;
+    
+}
+
+h1{
+    font-weight: bold;
+    text-align: center;
+}

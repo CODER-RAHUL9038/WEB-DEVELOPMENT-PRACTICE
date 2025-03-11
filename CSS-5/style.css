@@ -1,0 +1,41 @@
+#container{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    border: 2px solid black;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start ;
+    /* flex-wrap: wrap; */
+    
+    /* justify-content: space-around ;
+    justify-content: space-between ; */
+    align-content : space-between;
+    
+        
+
+}
+h1{
+    text-align: center  ;
+}
+#container div{
+    height: 100px;
+    width: 300px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+
+}
+
+#org{
+    align-self: baseline;
+     /* flex-basis: 300px;  */
+     /* flex-grow: 1; */
+     /* flex-shrink: 3 */
+     /* flex shorthand  flex: grow shrink basis */
+     flex: 2 2 100px;
+     
+    
+}

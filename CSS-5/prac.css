@@ -1,0 +1,30 @@
+#container{
+    height: 50px;
+    width: 900px;
+    background-color: pink;
+    margin: 10px auto;
+    border: 2px solid lightskyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align:center;
+    border-radius: 10px;
+        
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+#container div{
+   /* height: 50px; The #container is 50px tall.
+The div elements inside #container are also 50px tall.
+Since the child divs already occupy the full height of the parent, they are technically already "centered" 
+(because they fill the entire height). However, the text inside each div is not vertically centered, which makes it look misaligned. Hence giving les than 50px less suppose 25px*/
+    width: 80px;
+    height: 25px;
+    font-size: 24px;
+    
+}
