@@ -1,0 +1,56 @@
+.container{
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    display: grid;
+
+    /* NORMAL WAY TO A ROWS AND COLUMNS */
+    /* grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-template-columns: 200px 200px 200px; */
+
+    /* PREFERRED WAY TO AD ROW AND COLUMN */
+    grid-template-rows: repeat(3,1fr) ;
+    /* ALTERNATE WAY  */
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-columns: repeat(3 ,1fr) ;
+    /* column and row gap */
+    row-gap: 10px;
+    column-gap: 10px;
+    /* shorthand for gap */
+    grid-gap: 10px 20px;
+    /* grid start and end column */
+
+    /* ALIGNMENT ND JUSTIFICATION */
+/* justify-items: center;
+align-items: center; */
+place-items: center;
+    
+}
+
+.item{
+          width: 100px;
+        height: 50px;  
+        background-color: greenyellow;
+        border: 2px solid black;
+        text-align:center;
+
+}
+
+.one {
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* grid column shorthand */
+    /* grid-column: 1/3;
+    grid-column: 1/span 2; */
+     /* place-self: end;  */
+}
+.two{
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* grid row shorthand */
+    /* grid-row: 1/4;
+    grid-row: 1/ span 2; */
+}
+
+
