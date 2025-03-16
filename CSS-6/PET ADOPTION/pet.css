@@ -1,13 +1,18 @@
  .card{
 
-    width: 325px;
+    width: 400px;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
-    
-
-    
+    margin: 10px;
+    padding: 10px;
 }
+img { 
+    width: 100%;
+    border-radius: 25px;
+    
+    
+} 
 h2{
     color: brown;
 }
@@ -18,26 +23,22 @@ h3{
     padding: 10px;
 }
 
-p{
-    text-align: left;
-    padding: 10px;
+h4{
+    text-align: right;
+    color: brown;
 }
-
-
-img { height: 150px;
-    width: 300px;
-    border-radius: 10px;
-    margin: 10px 20px 5px 10px;
-    
-} 
-
 #pets{
 
-   background-color: white;
-    margin: 10px auto;
+   margin: 10px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
     
+}
+
+@media (max-width: 376px){
+    #pets{
+        flex-wrap: wrap;
+        
+    }
 }
