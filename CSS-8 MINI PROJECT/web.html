@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="mainbox">
+        <input type="checkbox" id="checkbox">
+        <div class="ham">
+           <label for="checkbox"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <!-- THIS INPUT CHECKBOX IS KEPT OUTSIDE AS TO MAKE IT SIBLING OF SIDEBAR DIV SO THAT LATER ON WE CAN APPLY SIDEBAR HIDING EFFECT WHICH WON'T WORKS ON PARENTS -->
+        
+        <div class="sidebar">
+            <div class="crossed">
+                    <label for="checkbox" class="checkbox"><i class="fa-solid fa-xmark"></i></label>
+                </div>
+                <div class="logo">
+                    <a href="#">Rahul Shaw</a>
+                </div>
+            
+            <div class="menu">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-image"></i>
+                        <a href="https://photos.google.com/places" >Photos</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-youtube"></i>
+                        <a href="https://www.youtube.com/@Multi_Magic">Youtube</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-images"></i>
+                        <a href="https://drive.google.com/drive/folders/1qOyWAt958MxA2H_djj0JREmusBosPYnN">Marriage</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-store"></i>
+                        <a href="#">Store</a>
+                    </li>
+                    
+                    <li>
+                        <i class="fa-solid fa-comments"></i>
+                        <a href="#">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
