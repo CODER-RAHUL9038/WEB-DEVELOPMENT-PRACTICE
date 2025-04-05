@@ -130,10 +130,165 @@
 
 // console.log( (5>3 && 4>5 ))
 
-let str = "apple";
-if ((str[0]=="a") && (str.length > 3)) {
-    console.log("String is good");
-}
-else {
-    console.log("string is bad");
-}
+// let str = "apple";
+// if ((str[0]=="a") && (str.length > 3)) {
+//     console.log("String is good");
+// }
+// else {
+//     console.log("string is bad");
+// }
+// SWITCH STATEMENTS
+
+// let color = "red";
+// switch (color) {
+//     case "red":
+//         console.log("Stop!") 
+//         break;
+//     case "yellow":
+//         console.log("Go slow !")
+//         break;
+//     case "green":
+//         console.log("Go!")
+//         break;
+
+//     default:
+//         console.log("The light is Broken")
+//         break;
+// }
+
+// let day = 21;
+
+// switch (day) {
+//     case 1 :
+//         console.log("Today is Sunday!") 
+//         break;
+//     case 2 :
+//         console.log("Today is Monday! !")
+//         break;
+//     case 3 :
+//         console.log("Today is Tuesday!")
+//         break;
+//     case 4 :
+//         console.log("Today is Wednesday!")
+//         break;
+//     case 5 :
+//         console.log("Today is Thursday!")
+//         break;
+//     case 6 :
+//         console.log("Today is Friday!")
+//         break;
+//     case 7 :
+//         console.log("Today is Saturday!")
+//         break;
+
+//     default:
+//         // console.log("Sorry Wrong input")
+//         alert("Wrong input")
+//         break;
+// }
+
+// let first_name= prompt("Enter your first name :");
+// console.log(first_name)
+
+// let first_name= prompt("Enter your First name : ");
+// let Last_name= prompt("Enter your last name : ");
+// console.log(`Your Full Name is : ${first_name} ${Last_name}!`)
+
+// Exercise-1
+
+// let num = 101;
+// if (num % 10 == 0) {
+//     console.log("The number is Good")
+// }
+// else{
+//     console.log("The number is Bad")
+// }
+
+// EXERCISE-2
+
+// let username = prompt("Enter your Name") 
+// let age = prompt("Enter your Age") 
+// let msg = `${username} is ${age} years old`
+// alert(msg)
+
+// EXERCISE -3 
+// let Quarter = 2
+// switch (Quarter) {
+//     case 1 :
+//         console.log("Janauary, Februar and March")
+//         break;
+//     case 2 :
+//         console.log("April, May and June")
+//         break;
+//     case 3 :
+//         console.log("July, August and September")
+//         break;
+//     case 4 :
+//         console.log("October, November and December")
+//         break;
+    
+
+//     default:
+//         console.log("Wrong Month's Quarter")
+//         break;
+        
+// }
+
+// EXERCISE- 4
+
+// let str = "papplet"
+// if (((str[0] == "A") || (start[0] == "a")) && (str.length > 5)) {
+//     console.log("It is a Golden string")
+// }
+// else {
+//     console.log("It is not a Golden string")
+// }
+
+
+// EXERCISE- 5
+
+// 1ST APPROACH
+// let a = Number(prompt("Enter the First number"))
+// let b = Number(prompt("Enter the Second number"))
+// let c = Number(prompt("Enter the Third number"))
+
+// if ((a>b) && (a>c)) {
+//     console.log("The First Number is the greatest number");
+// }
+// else if ((b>a) && (b>c)) {
+//     console.log("The Second Number is the greatest number");
+// }
+// else{
+//     console.log("The Third Number is the greatest number");
+// }
+
+// 2ND APPROACH
+
+// let a = Number(prompt("Enter the First number"));
+// let b = Number(prompt("Enter the Second number"));
+// let c = Number(prompt("Enter the Third number"));
+//  let greatest = a;
+//  if (b > greatest) {
+//     greatest = b;
+//  } 
+//  if (c > greatest) {
+//     greatest = c;
+//  }
+// console.log(`The greatest  number is ${greatest}`);
+
+
+
+// EXERCISE-6
+
+// let numOne = 251;
+// let numTwo = 6785;
+// if ((numOne % 10) == (numTwo % 10)){
+//     console.log("The both numbers have same last digit")
+// }
+// else{
+//     console.log("The both numbers don't have same last digit")
+// }
+
+
+str = "threg"
+console.log(start[0])
