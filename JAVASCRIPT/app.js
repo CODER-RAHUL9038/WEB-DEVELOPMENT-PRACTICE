@@ -290,5 +290,35 @@
 // }
 
 
-str = "threg"
-console.log(start[0])
+//  Age Group Classifier
+// let age = 10;
+// if (age < 13){
+//     console.log("Child")
+// }
+// else if ((age >=13) && (age <=17))
+//     console.log("Teenager")
+// else{
+//     console.log("Adult")
+// }
+
+// 🎓 2. Grading System
+// Write a program that takes a number marks and prints
+// let marks = 90;
+// if ((marks >= 90) && (marks <=100)) {
+//     console.log("Grade - A")
+// }
+// else if ((marks >= 75) && (marks <=89)){
+//     console.log("Grade - B ")
+// }
+// else if ((marks >= 60) && (marks <=74)){
+//     console.log("Grade - C ")
+// }
+// else if ((marks >= 40) && (marks <=59)){
+//     console.log("Grade - D ")
+// }
+// else if (marks < 40){
+//     console.log("Failed")
+// }
+// else {
+//     console.log("Please Enter the Marks within the 1-100 range ")
+// }
