@@ -83,3 +83,28 @@
 // let primary = [1 ,2 ,3]
 // primary.reverse();
 // console.log(primary)
+
+// ARRAY SLICING ( ORIGINAL ARRAY REMAINS SAME)
+// let color = ["red","yellow","blue","orange","pink","white"]
+// console.log(color.slice())
+// console.log(color) //( ORIGINAL ARRAY REMAINS SAME)
+// console.log(color.slice(2,4))
+// console.log(color) // ( ORIGINAL ARRAY REMAINS SAME)
+// console.log(color.slice(1,5))
+// console.log(color) // ( ORIGINAL ARRAY REMAINS SAME)
+// console.log(color.slice(-2))
+// console.log(color) // ( ORIGINAL ARRAY REMAINS SAME)
+// console.log(color.slice(7))
+// console.log(color) // ( ORIGINAL ARRAY REMAINS SAME)
+
+// ARRAY SPLICING (MODIFIES THE ORIINAL ARRAY)
+// let color = ["red","yellow","blue","orange","pink","white"]
+// console.log(color.splice(4)) // works a slice and returns "pink","white" as return.
+// console.log(color) // now oiginal color = ['red', 'yellow', 'blue', 'orange']
+// console.log(color.splice(0,1)) // works a slice and returns red as return.
+// console.log(color) // Now original color = ['yellow', 'blue', 'orange']
+// console.log(color.splice(0, 1, "Mango", "apple")) // deleted yellow and returned it.
+// console.log(color) //  now color =  ['Mango', 'apple', 'blue', 'orange']
+// console.log(color.splice(0, 0, "NEW", )) // ADDED "NEW" BEFORE 0TH INDEX WITH NO DELETION 
+// console.log(color) //COLOR = ['NEW', 'Mango', 'apple', 'blue', 'orange']
+
