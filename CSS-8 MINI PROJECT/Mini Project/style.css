@@ -21,6 +21,7 @@
 .sidebar_menu{
     /* To hide the items of sidemenu on the left panel */
     position: fixed;
+    /* Applied later for cross effect */
     left: -350px; 
     height: 100vh;
     width: 300px;
