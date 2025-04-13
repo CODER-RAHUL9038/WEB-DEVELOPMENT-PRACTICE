@@ -14,17 +14,17 @@
 // let info = [25 ,67 ,98, "coding", "namchi",76]
 // console.log(info)
 
-    // EMPTY ARRAY
-    // let info = ["coding", "namchi"];
-    // console.log(info)
+// EMPTY ARRAY
+// let info = ["coding", "namchi"];
+// console.log(info)
 
-    // ARRAYS ARE MUTABLE
-    // let fruits = ["banana","mango","orange"]
-    // console.log(fruits) 
-    // fruits[0] = "apple"
-    // console.log(fruits)
+// ARRAYS ARE MUTABLE
+// let fruits = ["banana","mango","orange"]
+// console.log(fruits) 
+// fruits[0] = "apple"
+// console.log(fruits)
 
-    // ARRAY METHODS
+// ARRAY METHODS
 
 // let str = ["audi","bmw","mercedes"]
 // // PUSH (PUSH TO END )
@@ -87,7 +87,7 @@
 // ARRAY SLICING ( ORIGINAL ARRAY REMAINS SAME)
 // let color = ["red","yellow","blue","orange","pink","white"]
 // console.log(color.slice())
-// console.log(color) //( ORIGINAL ARRAY REMAINS SAME)
+// console.log(color) //( ORIGINAL ARRAY REMAINS SAME)  
 // console.log(color.slice(2,4))
 // console.log(color) // ( ORIGINAL ARRAY REMAINS SAME)
 // console.log(color.slice(1,5))
@@ -108,3 +108,11 @@
 // console.log(color.splice(0, 0, "NEW", )) // ADDED "NEW" BEFORE 0TH INDEX WITH NO DELETION 
 // console.log(color) //COLOR = ['NEW', 'Mango', 'apple', 'blue', 'orange']
 
+// SORT ARRAY
+// let color = ["red", "yellow", "blue", "orange", "pink", "white"]
+// console.log(color.sort()) // ['blue', 'orange', 'pink', 'red', 'white', 'yellow']
+
+// ADDING AND DELETING ELEMENTS IN ARRAY USING SPLICE
+// let start = ["january", "july", "march", "august"]
+// start.splice(0,2, "july", "june");
+// console.log(start)
