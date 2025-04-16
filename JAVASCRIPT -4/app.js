@@ -69,44 +69,49 @@
 
 // GUESS THE FAVOURITE MOVIE NAME AND USER ENTERS "QUIT " AND CAN QUIT THE GAME
 
-// let userInput = prompt("Enter the movie name (Type 'Quit' to exit)")
-// let movie = "pk"
-// while (userInput !== movie) {
-//    if (userInput == "quit"){
-//         console.log("logged out")
-//         break
-//     }  
-//    else{
-//         userInput = prompt(" Wrong Input! Enter the Movie name again")
-//     }
-// }
-// if (userInput == movie){
-//     console.log(" You are corect!")
-// }
+let userInput = prompt("Guess the movie name (Type 'Quit' to exit)")
+let movie = "pk"
+while ((userInput !== movie) && (userInput !== "quit") && (userInput !== null)){
+        console.log(" You are Wrong!")
+        userInput = prompt(` ${userInput} is Wrong Answer! Enter the Movie name again`)
+     
+}
+if (userInput == "quit") {
+    console.log("You are logged out")
+}
+else if (userInput == null){
+    console.log("Thanks for participating. Exiting....")
+    
+}
+
+else{
+    console.log(` ${userInput} is corect answer`)
+}
+
 
 
 // ✅ JS Game: Limited Attempts Movie Guessing
-let movie = "pk"
-let attempts = 3;
-let userInput;
-while (attempts>0){
-    userInput = prompt(`Enter the movie name (Attempts left: ${attempts}) or type 'quit' to exit:`);
-    if (userInput == movie) {
-        console.log(`Woah! ${userInput} is correct answer`)
-        break;
-    }
-    else if (userInput == "quit"){
-        console.log("You are logged out")
-        break;
-    }
-    else {
-        attempts --
-        if (attempts == 0) {
-            console.log("🚫 No attempts left. Game over!");
-        } else {
-            console.log(`${userInput} is Wrong input. Try again`);
-        }
-    }
-}
+// let movie = "pk"
+// let attempts = 3;
+// let userInput;
+// while (attempts>0){
+//     userInput = prompt(`Enter the movie name (Attempts left: ${attempts}) or type 'quit' to exit:`);
+//     if (userInput == movie) {
+//         console.log(`Woah! ${userInput} is correct answer`)
+//         break;
+//     }
+//     else if (userInput == "quit"){
+//         console.log("You are logged out")
+//         break;
+//     }
+//     else {
+//         attempts --
+//         if (attempts == 0) {
+//             console.log("🚫 No attempts left. Game over!");
+//         } else {
+//             console.log(`${userInput} is Wrong input. Try again`);
+//         }
+//     }
+// }
 
 
