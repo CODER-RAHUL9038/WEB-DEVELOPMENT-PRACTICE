@@ -69,24 +69,24 @@
 
 // GUESS THE FAVOURITE MOVIE NAME AND USER ENTERS "QUIT " AND CAN QUIT THE GAME
 
-let userInput = prompt("Guess the movie name (Type 'Quit' to exit)")
-let movie = "pk"
-while ((userInput !== movie) && (userInput !== "quit") && (userInput !== null)){
-        console.log(" You are Wrong!")
-        userInput = prompt(` ${userInput} is Wrong Answer! Enter the Movie name again`)
+// let userInput = prompt("Guess the movie name (Type 'Quit' to exit)")
+// let movie = "pk"
+// while ((userInput !== movie) && (userInput !== "quit") && (userInput !== null)){
+//         console.log(" You are Wrong!")
+//         userInput = prompt(` ${userInput} is Wrong Answer! Enter the Movie name again`)
      
-}
-if (userInput == "quit") {
-    console.log("You are logged out")
-}
-else if (userInput == null){
-    console.log("Thanks for participating. Exiting....")
+// }
+// if (userInput == "quit") {
+//     console.log("You are logged out")
+// }
+// else if (userInput == null){
+//     console.log("Thanks for participating. Exiting....")
     
-}
+// }
 
-else{
-    console.log(` ${userInput} is corect answer`)
-}
+// else{
+//     console.log(` ${userInput} is corect answer`)
+// }
 
 
 
@@ -114,4 +114,17 @@ else{
 //     }
 // }
 
+// LOOPS WITH ARRAY
+//  let fruit = ["Mango", "apple", "banana", "litchi", "orange"]
+//  fruit.push("pineapple")
+// for( i=0; i<fruit.length; i++){
+//     console.log(i , fruit[i])
+// }
+
+// IN REVERSE ORDER
+  let fruit = ["Mango", "apple", "banana", "litchi", "orange"]
+fruit.push("pineapple")
+for( i=fruit.length-1; i>=0; i--){
+    console.log(i , fruit[i])
+}
 
