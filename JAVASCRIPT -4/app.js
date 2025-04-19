@@ -122,9 +122,77 @@
 // }
 
 // IN REVERSE ORDER
-  let fruit = ["Mango", "apple", "banana", "litchi", "orange"]
-fruit.push("pineapple")
-for( i=fruit.length-1; i>=0; i--){
-    console.log(i , fruit[i])
-}
+//   let fruit = ["Mango", "apple", "banana", "litchi", "orange"]
+// fruit.push("pineapple")
+// for( i=fruit.length-1; i>=0; i--){
+//     console.log(i , fruit[i])
+// }
 
+// NESTED FOR LOOP
+
+// let heroes = [ ["ironman","spiderman","thor",] , ["superman","wonder women", "flash" ]]
+// for (let i = 0; i <heroes.length; i++){
+  // ACCESS FIRST ARRRAY AT  INDEX ZERO
+//   console.log(i, heroes[i]) 
+//   for( j = 0; j < heroes[i].length; j++)
+//     console.log(heroes[i][j])
+// }
+
+// 2ND ORDER NESTED LOOP
+// let heroes = [ 
+//   ["ironman","spiderman","thor", ["fourth"]] , ["superman","wonder women", "flash" ]
+// ]
+// for (let i = 0; i <heroes.length; i++){
+//   console.log(i, heroes[i])
+
+//   for(let j = 0; j < heroes[i].length; j++){
+//     console.log(heroes[i][j])
+//       if (Array.isArray(heroes[i][j])){
+//         for( let k = 0; k < heroes[i][j].length; k++)
+//         console.log(heroes[i][j][k])
+//       }
+//   }
+// }
+
+
+// FOR OF LOOP
+
+// NAME OF FRUITS
+// let fruits = ["Mango", "apple", "banana", "litchi", "orange"]  
+// for (element of fruits){
+//     console.log(element) 
+// }
+
+// // CHARACTERS OF STRINGS
+// for (char of "rahul"){
+//   console.log(char)
+// }
+
+// NESTED FOR OF LOOP
+// let heroes = [ 
+//   ["ironman","spiderman","thor"] , ["superman","wonder women", "flash" ]
+// ]
+
+// for (items of heroes){
+//   console.log(items)
+//   for( list of items){
+//     console.log(list)
+//   }
+// }
+
+// 2ND ORDER NESTED FOR OF LOOP
+// let heroes = [ 
+//   ["ironman","spiderman","thor" ,["forth"]] , ["superman","wonder women", "flash" ]
+// ]
+
+// for (items of heroes){
+//   console.log(items)
+//   for( list of items){
+//     console.log(list)
+//     if (Array.isArray(list)){
+//     for(eachelement of list){
+//       console.log(eachelement)
+//     }
+//   }
+//   }
+// }
