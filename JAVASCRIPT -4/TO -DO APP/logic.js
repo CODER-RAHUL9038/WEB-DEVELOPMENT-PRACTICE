@@ -111,3 +111,50 @@
 //     console.log("The string is not palindrone")
 // }
 
+// 7. Calculate the factorial of a number using a loop
+//  Write a program to calculate the factorial of a number (e.g., 5! = 5×4×3×2×1).
+
+// USING WHILE LOOP
+// let num = 5
+// let printNum = num
+// let factorial = 1
+// while (num !== 0){
+//     factorial  = factorial*num
+//     num--
+    
+// }
+// console.log(`The Factorial of ${printNum} is ${factorial}`)
+
+// USING FOR LOOP 
+// let num = 5
+// let factorial = 1
+// for (i=1;i<=num;i++){
+//     factorial*=i
+// }
+// console.log(`The factorial of num ${num} is ${factorial}`)
+
+// 8. Print Fibonacci series up to n terms
+//  Write a program to print the Fibonacci series up to n terms.
+
+// let num = 15
+// let a = 0
+// let b = 1
+// for (i=1; i<=num; i++){
+    
+//     next = a+b
+//     a=b
+//     b=next
+//     console.log(next)
+// }
+
+
+// 9. Find the sum of numbers from 1 to n
+//  Write a program that finds the sum of numbers from 1 to a given number n.
+
+let n = 5
+result = 0
+for (i=1; i<=5; i++){
+    result = result+i
+   
+}
+console.log(`The sum of first ${n} number is ${result}`)
