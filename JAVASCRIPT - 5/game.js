@@ -8,7 +8,7 @@ while(true){
         break;
     }
     else if (guess == random){
-        console.log("Congrats!! You are correct!")
+        console.log(`Congrats!! ${guess} is correct!`)
         break;
     }
     else {
