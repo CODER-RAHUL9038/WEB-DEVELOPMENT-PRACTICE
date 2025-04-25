@@ -35,3 +35,35 @@ function isAdult() {
 }
 
 isAdult()
+
+// DICE FUNCTION - 5
+function dice() {
+    let dice = Math.floor(Math.random() *6) + 1
+    console.log("Dice :", dice)
+}
+
+dice()
+// FUNCTION WITH ARGUMENT - 6
+function printname(name) {
+    console.log(name)
+}
+printname("rahul")
+
+// FUNCTION WITH  MULTIPLE ARGUMENT - 7
+function printinfo(name,age) {
+    console.log(`${name}'s age is ${age} `)
+}
+printinfo("rahul",25)
+
+// FUNCTION WITH  MULTIPLE ARGUMENT - 8
+function sum(num1,num2) {
+    console.log("sum :", num1+num2)
+}
+sum(2,5)
+
+
+//  AVERAGE FUNCTION WITH  MULTIPLE ARGUMENT - 8
+function avg(a,b,c) {
+    console.log("The average is :", a+b+c)
+}
+avg(3,5,6)
