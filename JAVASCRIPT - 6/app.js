@@ -127,5 +127,16 @@ hello = function()
     console.log("shaw")
 }
 
+// HIGHER ODER FUNCTION
 
+let greet = function(){
+    console.log("Hello")
+}
+
+let funcgreet = function(func,count){
+    for(i=1; i<=count; i++)
+    func()
+}
+
+funcgreet(greet,3)
 
