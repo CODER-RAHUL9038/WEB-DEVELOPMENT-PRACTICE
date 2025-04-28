@@ -127,7 +127,7 @@ hello = function()
     console.log("shaw")
 }
 
-// HIGHER ODER FUNCTION
+// HIGHER ODER FUNCTION - 14
 
 let greet = function(){
     console.log("Hello")
@@ -140,3 +140,16 @@ let funcgreet = function(func,count){
 
 funcgreet(greet,3)
 
+
+// HIGHER ODER FUNCTION PRACTICE - 15
+
+let gret = function(){
+    console.log("Hello")
+}
+
+let gretfunc = function(newfunc, n){
+    for (let i = 0; i<n; i++){
+        newfunc()
+    }
+}
+gretfunc(gret, 5)
