@@ -101,55 +101,118 @@
 // console.log(concat(arr))
 
 // LEXICAL SCOPE -11
-function outerfunc(){
-    let x = 5;
-    let y = 6;
-    function innerfunc(){
-        console.log(x)
-    }
-    innerfunc()   
-}
+// function outerfunc(){
+//     let x = 5;
+//     let y = 6;
+//     function innerfunc(){
+//         console.log(x)
+//     }
+//     innerfunc()   
+// }
 
-// FUNCTION EXPRESSION- NAMELESS -12
-let a = function (a,b){
-    return  a+b
-}
+// // FUNCTION EXPRESSION- NAMELESS -12
+// let a = function (a,b){
+//     return  a+b
+// }
 
-// FUNCTION EXPRESSION- 13
+// // FUNCTION EXPRESSION- 13
 
-let hello = function(){
-    console.log("Rahul")
+// let hello = function(){
+//     console.log("Rahul")
 
-}
-// UPDATING FUNCTION LIKE A VARIABLE
-hello = function()
-{
-    console.log("shaw")
-}
+// }
+// // UPDATING FUNCTION LIKE A VARIABLE
+// hello = function()
+// {
+//     console.log("shaw")
+// }
 
-// HIGHER ODER FUNCTION - 14
+// // HIGHER ODER FUNCTION - 14
 
-let greet = function(){
-    console.log("Hello")
-}
+// let greet = function(){
+//     console.log("Hello")
+// }
 
-let funcgreet = function(func,count){
-    for(i=1; i<=count; i++)
-    func()
-}
+// let funcgreet = function(func,count){
+//     for(i=1; i<=count; i++)
+//     func()
+// }
 
-funcgreet(greet,3)
+// funcgreet(greet,3)
 
 
-// HIGHER ODER FUNCTION PRACTICE - 15
+// // HIGHER ODER FUNCTION PRACTICE - 15
 
-let gret = function(){
-    console.log("Hello")
-}
+// let gret = function(){
+//     console.log("Hello")
+// }
 
-let gretfunc = function(newfunc, n){
-    for (let i = 0; i<n; i++){
-        newfunc()
-    }
-}
-gretfunc(gret, 5)
+// let gretfunc = function(newfunc, n){
+//     for (let i = 0; i<n; i++){
+//         newfunc()
+//     }
+// }
+// gretfunc(gret, 5)
+
+// HIGHER ODER FUNCTION WITH RETURN PRACTICE - 16
+
+
+
+
+
+//  function oddorEvenFactory(){
+//     if (request == "odd"){
+//         return function(n){
+//             console.log(! (n % 2 == 0))
+//         }
+        
+//     }
+//     else if (request == "even"){
+//         return function(n){
+//             console.log(n % 2 == 0)
+//         }
+       
+//     }
+//     else{
+//         console.log("Wrong Request")
+//     }
+//  }
+
+// let request = "odd" // or even
+// let func = oddorEvenFactory("request")
+// func(7)
+
+
+// METHODS
+// const calculator = {
+//     sum : function(a , b){
+//         return (a+b);
+//     },
+//     sub : function(a , b){
+//         return(a-b);
+//     },
+//     mul :function(a , b){
+//         return(a*b);
+//     }
+// }
+
+// let calci = calculator.sub(10,5)
+// console.log(calci)
+
+
+// METHODS SHORTHAND
+
+// const calculator = {
+//     sum(a , b){
+//         return (a+b);
+//     },
+//     sub(a , b){
+//         return(a-b);
+//     },
+//     mul(a , b){
+//         return(a*b);
+//     }
+// }
+
+// let calci = calculator.sub(10,5)
+// console.log(calci)
