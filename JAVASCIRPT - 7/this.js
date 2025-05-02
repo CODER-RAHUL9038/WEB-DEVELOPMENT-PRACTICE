@@ -42,14 +42,13 @@ console.log(sqr(2));
 
 // WRITE A FUNCTION THAT PRINTS HELLO WORLD 5 TIMES AT AN INTERVAL OF OF 2S EACH
 
-
-
 let id = setInterval(() =>{
     console.log("Hello World")
   },2000);
 
 setTimeout(() => {
   clearInterval(id)
+  console.log("Clear interval ran")
 }, 10000);
 
 
