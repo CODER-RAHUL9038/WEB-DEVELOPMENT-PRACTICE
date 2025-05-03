@@ -1,4 +1,4 @@
-// FOR EACH - HIGHER ORDER FUNCTION
+// *********** FOR EACH - HIGHER ORDER FUNCTION ********
 
 //  FUNCTION NAME INSIDE ARRAY.FOR EACH
 
@@ -14,11 +14,9 @@
 
 // let arr = [ 1,2,3,4,5];
 
-
 // arr.forEach( function print (el){
 //     console.log(el)
 // });
-
 
 // CAN ALSO USE ARROW FUNCTION
 
@@ -29,7 +27,6 @@
 // };
 
 // arr.forEach(print)
-
 
 // IMPORTANT
 // FOR EACH FOR ARRAY OF OBJECT
@@ -46,7 +43,7 @@
 //     Name : "Aman",
 //     marks : 50
 // }
-    
+
 // ]
 
 // let print = (student) => {
@@ -56,13 +53,13 @@
 // arr.forEach(print)
 
 // array.forEach(element => {
-    
+
 // });
 
-// MAP 
+// MAP
 
 // WITH ARROW FUNCTION
- 
+
 // let  num = [1,2,3,4]
 // let double = num.map((el) =>{
 //     return el*2
@@ -76,7 +73,6 @@
 
 // console.log(double)
 
-
 // let students = [{
 //         Name : "Rahul",
 //         marks : 95
@@ -89,7 +85,7 @@
 //         Name : "Aman",
 //         marks : 50
 //     }
-        
+
 // ]
 
 // let updatestudent = students.map((el) =>{
@@ -99,3 +95,29 @@
 // })
 
 // console.log(updatestudent)
+
+//   *************** FILTER ***********************
+
+// let nums = [1, 3, 56, 12, 20, 56, 7, 90];
+// let ans = nums.filter((el) => {
+//   return el % 2 == 0;
+// });
+// console.log(ans); // (5) [56, 12, 20, 56, 90] all even
+
+// *********** EVERY  ************************* 
+
+// EVEN 
+
+// let num = [2,4,6] ADD ANY ODD VALUE TO GET FALSE 
+// let result = num.every((el)=>{
+//     return (el % 2 == 0) //EVEN     
+// })
+// console.log(result)
+
+
+// ODD 
+let num = [1,3,5]
+let result = num.every((el)=>{
+    return (el % 2 !== 0) //ODD  
+})
+console.log(result)
