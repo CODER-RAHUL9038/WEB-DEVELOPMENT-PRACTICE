@@ -197,3 +197,121 @@
 //  console.log(getMinimum(num))
 
 
+// *****************DEFAULT PARAMETER***************
+
+// function sum(a,b = 5){
+//     return a+b
+// }
+// console.log(sum(1,4)) // 5 SINCE B IS DEFINED AS 4 DEFAULT VALUE NOT USED HERE
+
+// console.log(sum(2)) // DEFAULT USED HERE SINCE VALUE OF B IS NOT DEFINED HERE SO DEFAULT IS USED HERE
+
+ 
+// //  SPREAD
+// let arr = [ 0,1,4,7,2,4]
+// let result  = Math.min(...arr)
+// console.log(result)  // 0 
+
+// // SPREAD WITH STRING
+// let str = "Rahul"
+// console.log(...str) // R a h u l
+
+// SPREAD WITH ARRAY LITERALS
+// let arr = [ 0,1,4,7,2,4]
+// let newArr = [...arr]
+// console.log(newArr)
+
+// // WITH STRINGS
+
+// let str = [..."Hello"]
+
+// console.log(str)
+
+
+//  ****************SPREAD WIH OBJECT LITERALS*************
+
+const data = {
+    email : "Raone@gmail.com",
+    password : "abcd"
+};
+
+const dataCopy =  {...data, id : 123, country : "India"}
+console.log(dataCopy)
+
+// CONVERTING ARRAY TO OBJECT USING SPREAD
+
+let arr = [ 0,1,4,7,2,4]
+let obj1 = {...arr}
+console.log(obj1) // KEY WILL BE REPLACED WITHT THE INDEX NO AND SINCE ARRAYS DON'T HAVE THEIR OWN KEYS 
+
+
+// *************** REST *************************
+// function sum(...args){
+//     let result =  args.reduce((sum,el) =>{
+//          return sum+el
+//     })
+//     return result
+
+// }
+// console.log(sum (1,2,3,1))
+
+// SHORTER VERSION OF REST WITH FUNCTION WITH IMPLICIT RETURN
+// function sum(...args){
+//     return args.reduce((sum,el) =>sum+el)
+// }
+// console.log(sum (1,2,3,1))
+
+// REST WITH OTHER PARAMETER
+
+// function sum( msg,...args){
+//     console.log(msg) // Hello
+//     return args.reduce((sum,el) =>sum+el)
+// }
+// console.log(sum ("Hello", 1,2,3,1))
+
+
+// **************DESTRUCTURING**************************
+// let names = ["Rahul", "Brjesh","Rohan","Mohan"]
+// let [Winner,RunnerUp] = names
+// console.log(Winner)
+// console.log(RunnerUp)
+
+
+
+// **************DESTRUCTURING WITH REST**************************
+// let names = ["Rahul", "Brjesh","Rohan","Mohan"]
+// let [Winner,RunnerUp,...others] = names
+// console.log(Winner)
+// console.log(RunnerUp)
+// console.log(others)
+
+
+// **************DESTRUCTURING WITH OBJECT**************************
+
+
+const student = {
+    Name : "Rahul",
+    age : 14,
+    class : 9,
+    subjects : ["hindi","Eng","math","science"],
+    username : "Rahul@123",
+    password : 1356
+
+};
+
+// WHEN SEARCHING THE OBJECT WITH THE SAME KEY NAME LIKE USERNAME AND PASSWORD ANS ALSO STORING IN THE SAME
+// let {username,password} = student
+// console.log(username)
+// console.log(password)
+
+// BUT WHEN SEARCHING THE OBJECT WITH THE SAME KEY NAME BUT STORING THE VALUE IN DIFFERENT VARIABLE NAME WE HAVE TO FOLLOW THIS FORMAT
+
+// let {username : user, password: pass} = student
+// console.log(user)
+// console.log(pass)
+
+// **** IF WE WANT TO SEARCH AND STORE CITY IN VARIABLE BUT CITY IS NOT PRESENT IN THE OBJECT THEN WE CAN ADD A DEFAULT TO CITY AS ******
+let {username : user, password: pass, city = "Kolkata"} = student
+// console.log(user)
+// console.log(pass)
+ 
