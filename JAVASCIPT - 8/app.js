@@ -289,15 +289,15 @@ console.log(obj1) // KEY WILL BE REPLACED WITHT THE INDEX NO AND SINCE ARRAYS DO
 // **************DESTRUCTURING WITH OBJECT**************************
 
 
-const student = {
-    Name : "Rahul",
-    age : 14,
-    class : 9,
-    subjects : ["hindi","Eng","math","science"],
-    username : "Rahul@123",
-    password : 1356
+// const student = {
+//     Name : "Rahul",
+//     age : 14,
+//     class : 9,
+//     subjects : ["hindi","Eng","math","science"],
+//     username : "Rahul@123",
+//     password : 1356
 
-};
+// };
 
 // WHEN SEARCHING THE OBJECT WITH THE SAME KEY NAME LIKE USERNAME AND PASSWORD ANS ALSO STORING IN THE SAME
 // let {username,password} = student
