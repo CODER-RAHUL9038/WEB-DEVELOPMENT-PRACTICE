@@ -54,3 +54,32 @@ let anchor = document.querySelectorAll(".box a")
 // for(color of anchor){
 // color.style.color = "green" // changed in inline style 
 // }
+
+
+// USING CLASSLIST FOR KNOWNING CLASS OF OBJECT
+
+// let img  = document.querySelector("img")
+// console.log(img.classList)  //TO KNOW NUMBER OF CLASSED DEFINED
+
+let heading = document.querySelector('h1')
+// console.log(heading.classList)
+
+// heading.classList.add ("green")
+// console.log(heading.classList) //added classs = "abc"
+
+// // REMOVING CLASSLIST
+
+
+// heading.classList.remove("green")  //classlist removed
+
+// CLASSLIST CONTAINS
+console.log(heading.classList.contains("green") )
+
+//  CLASSLIST TOGGLE
+console.log(heading.classList)
+console.log(heading.classList.toggle("green"))
+console.log(heading.classList)
+
+console.log(heading.classList.toggle("green"))
+console.log(heading.classList)
+
