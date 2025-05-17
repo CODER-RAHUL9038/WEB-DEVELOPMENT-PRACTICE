@@ -1,0 +1,30 @@
+section{
+    margin-top: 50px;
+}
+body{
+    text-align: center;
+    background-image: url(asset/bg_2.jpg);
+    background-size: cover;
+}
+div{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 7px solid black;
+    margin: auto;
+    
+}
+button{
+    height: 50px;
+    width: 300px;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+h1{
+    font-size: 30px;
+    
+    width: 300px;
+    margin: auto;
+}
