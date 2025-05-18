@@ -43,3 +43,38 @@
 // }
 
 
+// let p  =document.querySelector('p')
+// p.addEventListener('click',function(){
+// console.log('The paragraph was clicked')
+// })
+
+
+// let box =document.querySelector('.box')
+// box.addEventListener("mouseenter",function(){
+//     console.log("Mouse inside box")
+// })
+    
+
+// this is event listener
+
+
+
+
+let btn = document.querySelector('button') 
+let h2 = document.querySelector('h2')  
+let h3 = document.querySelector('h3')  
+let p = document.querySelector('p')  
+
+function changeColor(){
+    console.dir(this.innerText) // this will be the defined object itself
+    this.style.backgroundColor = "blue"
+}
+
+
+
+btn.addEventListener('click',changeColor) // changeColor is passed as callback
+h2.addEventListener('click',changeColor)
+h3.addEventListener('click',changeColor)
+p.addEventListener('click',changeColor)
+
+
