@@ -1,94 +1,124 @@
-let started = false;
-let h2 = document.querySelector('h2');
-let level = -1;
-let btns = ["red", "green", "yellow","purple" ]
+let started = false
 let userSeq = []
-let gameSeq  =[]
+let gameSeq = []
+let btns = ["red","yellow","green","purple"]
+let level = -1
+let h2 = document.querySelector('h2')
+let body = document.querySelector('body')
 
-document.addEventListener('keypress',startGame);
-document.addEventListener('touchstart',function(e){
-    if(!started && !e.target.classList.contains('btn')){
-        startGame()
-        e.preventDefault()
+document.addEventListener('keypress',startGame)
+    document.addEventListener('touchstart', function(e){
+    if (started == false   && !e.target.classList.contains('btn')){
+    e.preventDefault()
+    startGame()
     }
-},{passive:false} );    
+},{passive:false})
+
 
 function startGame(){
     if (started == false){
-       levelUp()
-
+        levelUp()
+        started = true
     }
 }
 
 function levelUp(){
-    
-    level++
     userSeq = []
-    h2.innerText = `Level ${level}`
-    started=true;
+    level++
+    h2.innerText = `level ${level}`
     gameFlash()
     
-
 }
 
 function gameFlash(){
-    let randIdx = Math.floor(Math.random()*4)
+    let randIdx  = Math.floor(Math.random()*4)
     let randColor = btns[randIdx]
     let randBtn = document.querySelector(`.${randColor}`)
+    setTimeout(gameSound,400)
     setTimeout(() => {
-        randBtn.classList.add('gameflash')
+        randBtn.classList.add('gameFlash')
     }, 500);
-    setTimeout(() => {  
-        randBtn.classList.remove('gameflash')
+    setTimeout(() => {
+        randBtn.classList.remove('gameFlash')
     }, 800);
     gameSeq.push(randColor)
-     console.log(gameSeq)  // GAME SEQUENCE
-    
 }
-
-
 function userFlash(btn){
-    btn.classList.add('userFlash');
+    
     setTimeout(() => {
-        btn.classList.remove('userFlash');
-    }, 200); // Flash for 200ms
+        btn.classList.add('userFlash')
+    }, 100);
+    setTimeout(() => {
+        btn.classList.remove('userFlash')
+    }, 300);
 }
 
-let allbtns = document.querySelectorAll('.btn')
-for (btn of allbtns){
-    btn.addEventListener('click', btnPress)
-}
+
 
 function checkAns(){
-    idx = userSeq.length-1
-    
+    let idx = userSeq.length-1
     if(userSeq[idx] === gameSeq[idx]){
         if(userSeq.length == gameSeq.length){
-            setTimeout(levelUp,500)
-            
+            setTimeout(levelUp,400)
         }
     }
     else{
-        h2.innerHTML = `GameOver! Your Score is <b>${level}</b> <br>Press any key to start again`
-        reset()
+        h2.innerHTML = `Game over! Your score is ${level}<br/> Press or tap to Start again`
+        wrongSound()
+        
+        bgFlash()
+        
+        setTimeout(reset,200)
     }
 }
 
 function btnPress(){
-    if(!started) return;
+    if(!started) return
     let btn =this
-    userColor = btn.getAttribute('id')
+    setTimeout(btnClick,100)
     userFlash(btn)
+    let userColor = btn.getAttribute('id')
     userSeq.push(userColor)
-    console.log(userSeq) // USER SEQUENCE
-    setTimeout(checkAns,200)
+    checkAns()
+
+}
+let allbtns = document.querySelectorAll('.btn')
+for (let btn of allbtns){
+    btn.addEventListener('click',btnPress)
 }
 
 
+// TRACK HEIGHT SCORE
 
-function reset(){
-    started = false;
+
+function bgFlash(){
+    setTimeout(() => {
+        body.classList.add('wrong')
+    }, 100);
+    setTimeout(() => {
+        body.classList.remove('wrong')
+    }, 1200);
+}
+
+function btnClick(){
+    let click = new Audio('asset/button.mp3')
+    click.play()
+}
+
+function gameSound(){
+    let click = new Audio('asset/game.mp3')
+    click.play()
+}
+
+function wrongSound(){
+    let click = new Audio('asset/wrong.mp3')
+    click.play()
+}
+function reset (){
+    started = false
     userSeq = []
-    level = -1;
     gameSeq = []
+    level = -1
 }
+
+
