@@ -5,17 +5,20 @@
 body{
     background-color: white;
     text-align: center;
+    overflow: hidden;
+    
 }
 .btn-container{
     display: flex;
     justify-content: center;
+    
 }
 .btn{
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
     border-radius: 20%;
     border: 10px solid black;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 1rem 1rem 2rem 1rem;
 }
 .red{
     background-color: red;
@@ -43,6 +46,18 @@ body{
     background-color: red;
 }
 
+h3{
+    margin-top: 1rem;
+    
+}
+h2{
+    margin-top: 0.5rem;
+    
+}
+h4{
+    margin;
+    
+}
 @media (max-Width : 540px){
    html, body{
         overflow:hidden;

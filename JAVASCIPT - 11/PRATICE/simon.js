@@ -5,6 +5,7 @@ let btns = ["red","yellow","green","purple"]
 let level = -1
 let h2 = document.querySelector('h2')
 let body = document.querySelector('body')
+let h3 = document.querySelector('h3')
 
 document.addEventListener('keypress',startGame)
     document.addEventListener('touchstart', function(e){
@@ -65,10 +66,9 @@ function checkAns(){
     else{
         h2.innerHTML = `Game over! Your score is ${level}<br/> Press or tap to Start again`
         wrongSound()
-        
         bgFlash()
-        
         setTimeout(reset,200)
+        maxScore()
     }
 }
 
@@ -89,6 +89,9 @@ for (let btn of allbtns){
 
 
 // TRACK HEIGHT SCORE
+function maxScore(){
+    h3.innerText = `Top Score : ${level}`
+}
 
 
 function bgFlash(){
