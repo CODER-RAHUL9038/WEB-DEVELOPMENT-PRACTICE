@@ -22,32 +22,67 @@
 
 //******************* Todo **********************
 
+// let input = document.querySelector('input')
+// let btn = document.querySelector('button')
+// let ul = document.querySelector('ul')
+
+// // ADDING ELEMENTS IN TODO
+// btn.addEventListener('click', function(){
+//     li = document.createElement('li');
+//     li.innerText = input.value
+//     input.value = ""
+//     ul.appendChild(li)
+
+//     // ADDING DELETE BUTTON
+//     delBtn = document.createElement('button');
+//     delBtn.innerText = "Delete"
+//     delBtn.classList.add('delete') // needed for part-2 logic
+//     li.appendChild(delBtn)
+    
+// })
+
+// ul.addEventListener('click',function(event){
+//     if(event.target.nodeName == "BUTTON"){
+//         let listItems = event.target.parentElement
+//         listItems.remove()
+//         console.log("Deleted")
+//     }
+// })
+
+// ***************************************************************
+
+
 let input = document.querySelector('input')
 let btn = document.querySelector('button')
 let ul = document.querySelector('ul')
 
-// ADDING ELEMENTS IN TODO
+// ADDING ITEMS
 btn.addEventListener('click', function(){
-    li = document.createElement('li');
-    li.innerText = input.value
-    input.value = ""
-    ul.appendChild(li)
-
-    // ADDING DELETE BUTTON
-    delBtn = document.createElement('button');
+    let item = document.createElement('li')
+    item.innerText = input.value
+    ul.append(item)
+    let delBtn = document.createElement('button')
     delBtn.innerText = "Delete"
-    delBtn.classList.add('delete') // needed for part-2 logic
-    li.appendChild(delBtn)
+    item.append(delBtn)
+    delBtn.classList.add('delete')
+    input.value = ""
+})
+
+ul.addEventListener('click', function(e){
+    if(e.target.classList == "delete"){ // condition to add check that event handler dont delete all items when click anywhere inside ul
+    let listItem = e.target.parentElement
+    listItem.remove()
+    }
     
 })
 
-ul.addEventListener('click',function(event){
-    if(event.target.nodeName == "BUTTON"){
-        let listItems = event.target.parentElement
-        listItems.remove()
-        console.log("Deleted")
-    }
-})
+
+// ADDING DELETE FUNCTION
+
+
+
+
+
 
 // part -2
 // LOGIC ONLY APPLICABLE ON EXISTIING LIST ITEMS
