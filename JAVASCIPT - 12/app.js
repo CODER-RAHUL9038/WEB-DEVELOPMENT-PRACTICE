@@ -66,29 +66,28 @@
 // });
 
 // CALLBACK HELL REPLACED WIT PROMISE
-h1 = document.querySelector("h1");
+// h1 = document.querySelector("h1");
 
-function changeColor(color, delay) {
- return  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      h1.style.color = color;
-      resolve("Color Changed");
-    }, delay);
-  });
-}
-changeColor("red",1000)
-  .then((result) => {
-    console.log(result);
-    return changeColor("green",1000);
-  })
-  .then((result) => {
-    console.log(result);
-    return changeColor("blue",1000);
-  })
-  .then((result) => {
-    console.log(result);
-  })
-  
+// function changeColor(color, delay) {
+//  return  new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       h1.style.color = color;
+//       resolve("Color Changed");
+//     }, delay);
+//   });
+// }
+// changeColor("red",1000)
+//   .then((result) => {
+//     console.log(result);
+//     return changeColor("green",1000);
+//   })
+//   .then((result) => {
+//     console.log(result);
+//     return changeColor("blue",1000);
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   })
 
 // ******************* CALLBACK HELL EXAMPLE*********************
 
@@ -171,3 +170,33 @@ changeColor("red",1000)
 //     console.log("Promise was rejected");
 //     console.log("error : ",error)
 //   });
+
+// ATM CASH WITHDRAW USING PROMISE
+let balance = 1000;
+function withdrawCash(cash) {
+  return new Promise((resolve, reject) => {
+    if (cash <= balance) {
+      balance -= cash;
+      resolve(`Rupees ${cash} withdrawn. Your balance is ${balance}.`);
+    } else {
+      reject("Sorry! Your account balance is low");
+    }
+  });
+}
+
+// withdrawCash(50)
+//   .then((request) => {
+//     console.log(request);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// SHORTHAND OF THE .THEN OR .CATCH CALLBACK
+withdrawCash(510)
+  .then(console.log)
+  .catch(console.log)
+
+
+
+  
