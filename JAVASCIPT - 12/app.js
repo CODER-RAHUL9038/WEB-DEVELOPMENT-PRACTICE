@@ -65,6 +65,31 @@
 //     }); // CALLED CALLBACK HELL -> NESTING IN CALLBACK
 // });
 
+// CALLBACK HELL REPLACED WIT PROMISE
+h1 = document.querySelector("h1");
+
+function changeColor(color, delay) {
+ return  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      h1.style.color = color;
+      resolve("Color Changed");
+    }, delay);
+  });
+}
+changeColor("red",1000)
+  .then((result) => {
+    console.log(result);
+    return changeColor("green",1000);
+  })
+  .then((result) => {
+    console.log(result);
+    return changeColor("blue",1000);
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  
+
 // ******************* CALLBACK HELL EXAMPLE*********************
 
 // function saveToDb(data, success, failure) {
@@ -105,40 +130,44 @@
 
 // *******************  PROMISES  *********************
 
-function saveToDb(data) {
-  return new Promise((resolve, reject) => {
-    let internetSpeed = Math.floor(Math.random() * 11);
-    if (internetSpeed > 4) {
-      resolve("Success : Data was saved!");
-    } else {
-      reject("Failure : Weak connection");
-    }
-  });
-}
+// function saveToDb(data) {
+//   return new Promise((resolve, reject) => {
+//     let internetSpeed = Math.floor(Math.random() * 11);
+//     if (internetSpeed > 4) {
+//       resolve("Success : Data was saved!"); // will be used as result in .then
+//     } else {
+//       reject("Failure : Weak connection"); // will be used as error in .catch
+//     }
+//   });
+// }
 
-// let request = saveToDb("Data-1") //   req = promise
-// request.then(()=>{
-//    console.log("Promise was Fulfilled");
-// })
-// .catch(() =>{
-//     console.log("Promise was rejected")
-// })
+// // let request = saveToDb("Data-1") //   req = promise
+// // request.then(()=>{
+// //    console.log("Promise was Fulfilled");
+// // })
+// // .catch(() =>{
+// //     console.log("Promise was rejected")
+// // })
 
-// COMPACT  AND IMPROVED VERSION
+// // COMPACT  AND IMPROVED VERSION
 
-saveToDb("Data-1")
-  .then(() => {
-    console.log("Promise was Fulfilled.  Data-1 saved");
-    return saveToDb("Data-2"); // return 2nd promise
-  })
-  .then(() =>{
-    console.log("Promise was Fulfilled.  Data-2 saved");
-     return saveToDb("Data-3"); // return 3RD promise
-  })
-  .then(() =>{
-    console.log("Promise was Fulfilled.  Data-3 saved");
-  })
+// saveToDb("Data-1")
+//   .then((result) => {
+//     console.log("Promise was Fulfilled.  Data-1 saved");
+//     console.log("result :", result)
+//     return saveToDb("Data-2"); // return 2nd promise
+//   })
+//   .then((result) =>{
+//     console.log("Promise was Fulfilled.  Data-2 saved");
+//    console.log("result :", result)
+//      return saveToDb("Data-3"); // return 3RD promise
+//   })
+//   .then((result) =>{
+//     console.log("Promise was Fulfilled.  Data-3 saved");
+//     console.log("result :", result)
+//   })
 
-  .catch(() => {
-    console.log("Promise was rejected");
-  });
+//   .catch((error) => {
+//     console.log("Promise was rejected");
+//     console.log("error : ",error)
+//   });
