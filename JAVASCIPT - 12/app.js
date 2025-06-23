@@ -66,6 +66,8 @@
 // });
 
 // CALLBACK HELL REPLACED WIT PROMISE
+
+
 // h1 = document.querySelector("h1");
 
 // function changeColor(color, delay) {
@@ -88,6 +90,24 @@
 //   .then((result) => {
 //     console.log(result);
 //   })
+
+
+// CALLBACK HELL REPLACED WITH ASYNC & AWAIT
+let h1 = document.querySelector("h1");
+function colorChange(color, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+        h1.style.color = color;
+    resolve("color changed");
+    }, delay);
+  });
+}
+
+async function colorTimer(){
+    await colorChange("orange",1000)
+    await colorChange("green",1000)
+    await colorChange("blue",1000)
+}
 
 // ******************* CALLBACK HELL EXAMPLE*********************
 
@@ -172,17 +192,17 @@
 //   });
 
 // ATM CASH WITHDRAW USING PROMISE
-let balance = 1000;
-function withdrawCash(cash) {
-  return new Promise((resolve, reject) => {
-    if (cash <= balance) {
-      balance -= cash;
-      resolve(`Rupees ${cash} withdrawn. Your balance is ${balance}.`);
-    } else {
-      reject("Sorry! Your account balance is low");
-    }
-  });
-}
+// let balance = 1000;
+// function withdrawCash(cash) {
+//   return new Promise((resolve, reject) => {
+//     if (cash <= balance) {
+//       balance -= cash;
+//       resolve(`Rupees ${cash} withdrawn. Your balance is ${balance}.`);
+//     } else {
+//       reject("Sorry! Your account balance is low");
+//     }
+//   });
+// }
 
 // withdrawCash(50)
 //   .then((request) => {
