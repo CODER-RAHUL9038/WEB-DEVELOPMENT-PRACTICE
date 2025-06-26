@@ -72,7 +72,6 @@
 //   console.log("new number = ", a + 3);
 // }
 
-
 // JSON DATA PARSING INTO OBJECT
 
 // let jsonData = '{"fact":"After humans, mountain lions have the largest range of any mammal in the Western Hemisphere.","length":92}'
@@ -82,14 +81,34 @@
 // console.log(validJson.fact)
 // console.log(validJson.length)
 
-
 // JSON DATA PARSING INTO STRING
 
-let student = {
-  Name : "Rahul",
-  marks : 100
-}
-let stringJson = JSON.stringify(student)
-console.log(stringJson)
+// let student = {
+//   Name : "Rahul",
+//   marks : 100
+// }
+// let stringJson = JSON.stringify(student)
+// console.log(stringJson)
 
+// LEARNING ADDING INFORMATION IN URLS
 
+// https://www.google.com/search?q=query+string
+
+// OUR FIRST API REQUEST
+
+let url = "https://catfact.ninja/fact";
+fetch(url)
+  .then((res) => {
+    return res.json(); // parsing --> makes body readable and returns as promise
+  })
+  .then((data1) => {
+    console.log("data1:", data1.fact);
+    return fetch(url);
+  })
+  .then((res) => {
+    return res.json();
+  })
+  .then((data2)=>{
+    console.log("data2 :", data2.fact)
+  })
+  .catch(console.log);
