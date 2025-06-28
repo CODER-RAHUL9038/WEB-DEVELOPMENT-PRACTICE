@@ -110,20 +110,102 @@
 //   .catch(console.log);
 
 // API CALL USING ASYNC & AWAIT
-let url = "https://catfact.ninja/fact";
-async function getFacts() {
-  try {
-    let res = await fetch(url);
-    let data = await res.json();
-    console.log(data.fact);
+// let url = "https://catfact.ninja/fact";
+// async function getFacts() {
+//   try {
+//     let res = await fetch(url);
+//     let data = await res.json();
+//     console.log(data.fact);
 
-     let res1 = await fetch(url);
-    let data1 = await res1.json();
-    console.log(data1.fact);
+//      let res1 = await fetch(url);
+//     let data1 = await res1.json();
+//     console.log(data1.fact);
 
-  } catch (error) {
-    console.log("error caught :", error)
-  }
+//   } catch (error) {
+//     console.log("error caught :", error)
+//   }
+// }
+
+// console.log(getFacts());
+
+// ************API CALL USING AXIOS AND SHOWING ON WEBPAGE***************
+
+// let btn = document.querySelector("button");
+// let h2 = document.querySelector("h2");
+// let p = document.querySelector("#result");
+
+// btn.addEventListener("click", async() => {
+//   let fact = await getFacts();
+//   console.log(fact)
+//   p.innerText = fact
+// });
+
+// *********GETFACT FUNCTION************
+
+// let url = "https://catfact.ninja/fact";
+// async function getFacts() {
+//   try {
+//     let res = await axios.get(url);
+//     return (res.data.fact);
+//   } catch (error) {
+//     console.log("error caught :", error);
+//     return "No fact found"
+//   }
+// }
+
+// ************API CALL USING then() AND SHOWING ON WEBPAGE***************
+
+// let btn = document.querySelector("button");
+// let h2 = document.querySelector("h2");
+// let p = document.querySelector("#result");
+
+// btn.addEventListener("click", () => {
+//   getFacts().then((fact) => {
+//     p.innerText = fact;
+//   });
+// });
+
+// let url = "https://catfact.ninja/fact";
+// function getFacts() {
+//   return axios
+//     .get(url)
+//     .then((res) => res.data.fact)
+//     .catch((e) => {
+//       console.log("Error caught :", e);
+//       return "No facts found";
+//     });
+// }
+
+// DOG API CALLS
+
+// let btn = document.querySelector("button");
+// let h2 = document.querySelector("h2");
+// let image = document.querySelector("#image");
+// let url2 = "https://dog.ceo/api/breeds/image/random";
+
+// btn.addEventListener("click", async () => {
+//   let link = await getImages();
+//   // image.src = img; // 1st way to add image
+//   image.setAttribute('src',link) // 2nd way to add image  
+// });
+
+// async function getImages() {
+//   try {
+//     let res = await axios.get(url2);
+//     return res.data.message;
+//   } catch (error) {
+//     console.log(error);
+//     return "No image found";
+//   }
+// }
+
+// SENDING HEADER 
+let url = "https://icanhazdadjoke.com/"
+
+ async function getJokes(){
+  const header = {headers : {Accept : "application/json"}}
+  let res = await axios.get(url,header)
+  console.log(res.data.joke)
 }
 
-console.log(getFacts());
+console.log(getJokes())
