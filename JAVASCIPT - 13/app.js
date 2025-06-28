@@ -200,12 +200,25 @@
 // }
 
 // SENDING HEADER 
-let url = "https://icanhazdadjoke.com/"
+// let url = "https://icanhazdadjoke.com/"
 
- async function getJokes(){
-  const header = {headers : {Accept : "application/json"}}
-  let res = await axios.get(url,header)
-  console.log(res.data.joke)
+//  async function getJokes(){
+//   const header = {headers : {Accept : "application/json"}}
+//   let res = await axios.get(url,header)
+//   console.log(res.data.joke)
+// }
+
+// console.log(getJokes())
+
+let url = "http://universities.hipolabs.com/search?name="
+let country = "nepal"
+async function getColleges(){
+  try {
+    let res = await axios.get(url+country)
+    console.log(res)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-console.log(getJokes())
+console.log(getColleges())
