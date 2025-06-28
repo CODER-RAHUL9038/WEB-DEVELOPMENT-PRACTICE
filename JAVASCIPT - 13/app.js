@@ -96,19 +96,34 @@
 
 // OUR FIRST API REQUEST
 
+// let url = "https://catfact.ninja/fact";
+// fetch(url)
+//   .then((res) => {
+//     return res.json(); // parsing --> makes body readable and returns as promise
+//   })
+//   .then((data1) => {
+//     console.log("data1:", data1.fact);
+//     return fetch(url);
+//   })
+//   .then(res => res.json())  // implicit returns
+//   .then(data2 => console.log("data2 :", data2.fact))  // implicit returns
+//   .catch(console.log);
+
+// API CALL USING ASYNC & AWAIT
 let url = "https://catfact.ninja/fact";
-fetch(url)
-  .then((res) => {
-    return res.json(); // parsing --> makes body readable and returns as promise
-  })
-  .then((data1) => {
-    console.log("data1:", data1.fact);
-    return fetch(url);
-  })
-  .then((res) => {
-    return res.json();
-  })
-  .then((data2)=>{
-    console.log("data2 :", data2.fact)
-  })
-  .catch(console.log);
+async function getFacts() {
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data.fact);
+
+     let res1 = await fetch(url);
+    let data1 = await res1.json();
+    console.log(data1.fact);
+
+  } catch (error) {
+    console.log("error caught :", error)
+  }
+}
+
+console.log(getFacts());
