@@ -1,0 +1,45 @@
+#box{
+    width: 200px;
+    height: 200px;
+    background-color: crimson;
+    position: absolute;
+    animation: anime 8s 0.2s forwards ease-in-out  ;
+    border-radius: 10%;
+    top: 10px;
+    
+}
+
+
+/* @keyframes anime {
+    0%{
+        left: 10px;
+        top: 10px;
+        background-color: red;
+        rotate: 0deg;
+    }
+    25%{
+        left: 85%;
+        top: 10px;
+        background-color: green;
+        rotate: 90deg;
+    }
+    50%{
+        left: 85%;
+        top: 70%;
+        background-color: blue;
+        rotate: 180deg;
+    }
+    75%{
+        left: 10px;
+        top: 70%;
+        background-color: yellow;
+        rotate : 270deg;
+    }
+    100%{
+        left: 10px;
+        top: 10px;
+        background-color: crimson;
+        rotate: 360deg;
+    }
+   
+} */
