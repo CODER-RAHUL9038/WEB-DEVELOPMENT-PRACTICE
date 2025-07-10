@@ -54,21 +54,21 @@
 
 // Q5. Write a function called mergeObjects that accepts two objects and returns a new object containing all the keys and values from both input objects.
 
-let student = {
-    Name : "Rahul",
-    Age : 25,
-    Class : 9
-}
-let details = {
-    Roll_No : 18,
-    Subject : ["Math","physics","Biology"],
-    Marks : 90
-}
+// let student = {
+//     Name : "Rahul",
+//     Age : 25,
+//     Class : 9
+// }
+// let details = {
+//     Roll_No : 18,
+//     Subject : ["Math","physics","Biology"],
+//     Marks : 90
+// }
 
 // let result = {...student,...details}
 // console.log(result)
 
 
 // USING FUNCTION
-const mergeobj = ((student,details)=>({...student, ...details}) )
-console.log(mergeobj(student,details))
+// const mergeobj = ((student,details)=>({...student, ...details}) )
+// console.log(mergeobj(student,details))
