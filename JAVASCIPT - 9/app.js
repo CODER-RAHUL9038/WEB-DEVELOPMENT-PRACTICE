@@ -1,12 +1,12 @@
 
-// ACCESSING BBY CLASSNAME
-// let smallImges =  (document.getElementsByClassName("oldImg"));
+// ACCESSING BY CLASSNAME
+// let smallImges =  document.getElementsByClassName("oldImg");
 // for (i=0; i<smallImges.length;i++){
 //     console.dir(smallImges[i])
 // }
 
 // CHANGING THE PROPERTY LIKE IMAGE HERE
-// let smallImges =  (document.getElementsByClassName("oldImg"));
+// let smallImges =  document.getElementsByClassName("oldImg");
 // for (i=0; i<smallImges.length;i++){
 //     smallImges[i].src = "assets/spiderman_img.png"
 //     console.log(`Value of image no. ${i} is changed`)
