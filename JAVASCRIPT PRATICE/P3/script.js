@@ -33,3 +33,4 @@ input.value = "";
 output.innerHTML = "Word Count: 0  | Characters: 0  | Max Characters: 100";
 output.classList.remove("orange", "red");
 }
+  
