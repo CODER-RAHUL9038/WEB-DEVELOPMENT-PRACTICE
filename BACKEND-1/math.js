@@ -49,3 +49,10 @@
 //   g: 9.8,
 //   pi: 3.14,
 // };
+
+// LEARNING IMPORTING MODULES IN NODE JS
+// This will export an object with properties sum, mul, g, and pi
+export const sum = (a, b) => a + b;
+export const mul = (a, b) => a * b;
+export const g = 9.8;
+export const pi = 3.14;
