@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role-Dice</title>
+</head>
+<body>
+    <h1>Rolled Dice is : 
+        <%= diceValue %>  <!--  ASSUME LIKE PASSING DATA FROM DATABASE  -->
+    </h1>  
+
+    <!-- CONDITIONAL STATEMENTS IN EJS -->
+    <% if (diceValue == 6) { %>
+     <h2>Nice! Roll Dice again.</h2>
+    <% } %>
+
+    
+
+    
+</body>
+</html>
