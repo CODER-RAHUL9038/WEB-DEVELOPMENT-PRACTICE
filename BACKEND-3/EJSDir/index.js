@@ -5,6 +5,8 @@ const path = require("path");
 const port = 3000;
 
 // SETTING EJS
+app.use(express.static(path.join(__dirname, "/public")))  // To Render static files runned outside the EJSDir 
+app.use(express.static(path.join(__dirname, "/public")))  // To Render static files runned outside the EJSDir 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
