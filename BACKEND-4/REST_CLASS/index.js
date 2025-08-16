@@ -9,34 +9,45 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Views"));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.listen(port, (req, res) => {
+  console.log(`listening on port : ${port}`);
+});
+
 let posts = [
+  { id: "1a", username: "Rahulshaw", content: "I love coding" },
+  { id: "2b", username: "Scaduu", content: " This is my first API creation" },
   {
-    username: "Rahulshaw",
-    content: "I love coding",
-  },
-  {
-    username: "Scaduu",
-    content: " This is my first API creation",
-  },
-  {
+    id: "3c",
     username: "Birju",
     content: " I am the training head of the program",
   },
 ];
 
+// Render Posts home page
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts });
 });
 
+// Rendering Form page
 app.get("/posts/new", (req, res) => {
   res.render("new.ejs");
 });
 
-app.post("/posts", (req,res) =>{
-  console.log(req.body)
-  res.send("post request working")
-})
+// Creating new Post
+app.post("/posts", (req, res) => {
+  let { id, username, content } = req.body;
+  posts.push({ id, username, content });
+  res.redirect("/posts");
+});
 
-app.listen(port, (req, res) => {
-  console.log(`listening on port : ${port}`);
+// Rettriving Id and showing content based on the id
+
+app.get("/posts/:id", (req, res) => {
+  let { id } = req.params;
+  let post = posts.find((p) => id === p.id);
+  if (post) {
+    res.render("show.ejs", { post });
+  } else {
+    res.send("Sorry wrong Id");
+  }
 });
