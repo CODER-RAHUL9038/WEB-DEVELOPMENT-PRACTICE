@@ -7,11 +7,9 @@
   </head>
   <body>
     <form method="post" action="/posts">
-      <input type="text" placeholder="Enter Id" name="id" />
-      <br /><br /><br>
-      <input type="text" placeholder="Enter Username" name="username" />
-      <br /><br /><br />
-      <textarea name="content" placeholder="Write your post"></textarea><br />
+      <input type="text" placeholder="Enter Username" name="username"  required/>
+      <br /><br />
+      <textarea name="content" placeholder="Write Something" required></textarea><br />
       <button type="submit">Submit Post</button>
     </form>
   </body>
