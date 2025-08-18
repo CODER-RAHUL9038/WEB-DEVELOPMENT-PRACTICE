@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <h2>Edit your post</h2>
-    <p>Post id : <%= post.id %></p>
+    <p>Post id : <%= post.id %></p> 
     <p>Post username : <%= post.username %></p>
-    <form method="post" action="/posts">
+     <form method="post" action="/posts/<%= post.id %>?_method=PATCH">  <!-- USING METHOD-OVERRIDE PACKAGE -->
       <textarea name="content" id="content" rows="10" cols="35"><%= post.content %></textarea> <br>
       <button>Submit</button>
     </form>

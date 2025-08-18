@@ -1,10 +1,182 @@
-h1 {
-  color: maroon;
-}
-.post {
-  background-color: rgb(168, 226, 226);
+/* Reset some default styles */
+body,
+h1,
+h3,
+h4,
+p,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
+/* Page container */
+body {
+  background: #f9fafb;
+  color: #222;
+  line-height: 1.2;
+  padding: 20px;
+}
+
+/* Main heading */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #b92b27; /* Quora red */
+}
+
+/* Each post card */
+.post {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Username */
 .user {
-  font-style: italic;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Content */
+.content {
+  color: #222;
+  font-size: 1rem;
+  margin: 5px 0 15px;
+}
+
+/* Links (See in Detail, Edit) */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #b92b27;
+  margin-right: 12px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #861d1b;
+  text-decoration: underline;
+}
+
+/* Delete button */
+button {
+  background: #b92b27;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #861d1b;
+}
+
+/* "Create new post" link */
+a[href*="new"] {
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: ;
+}
+
+/* CREATE NEW POST STYLING */
+
+/* Centered form container */
+.form-container {
+  max-width: 500px;
+  height: 100dvh;
+  margin: 2% auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Form heading */
+.form-container h1 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #b92b27;
+}
+
+/* Input + Textarea */
+.form-container input,
+.form-container textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+.form-container input {
+  max-height: 10px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #b92b27;
+  box-shadow: 0 0 6px rgba(185, 43, 39, 0.3);
+}
+
+.form-container textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Submit button */
+.form-container button {
+  background: #b92b27;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.form-container button:hover {
+  background: #861d1b;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #555;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #b92b27;
+  text-decoration: underline;
 }
