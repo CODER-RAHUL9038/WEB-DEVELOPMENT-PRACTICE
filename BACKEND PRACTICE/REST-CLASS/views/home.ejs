@@ -4,15 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Posts Detail</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Quora</h1>
-      <div class="post">
-        <% for( post of posts ) { %>
-        <h3>Id : <%= post.id %></h3>
-        <h3>Username: <%= post.username %></h3>
-        <p>Content : <%= post.content %></p>
+      <h1 id="site-title">Quora</h1>
+      <a id="new-post-link" href="http://localhost:8080/posts/new">Create new post</a>
+      <h2 id="all-posts-heading">All Posts</h2>
+
+      <div id="posts-wrapper">
+        <% for (post of posts) { %>
+        <div class="post-card">
+          <h4 class="post-id">Post Id : <%= post.id %></h4>
+          <h4 class="post-username">Username: <%= post.username %></h4>
+          <p class="post-content">Content : <%= post.content %></p>
+
+          <div class="post-actions">
+            <a class="detail-link" href="/posts/<%= post.id %>">Show in detail</a>
+            <a class="edit-link" href="/posts/<%= post.id %>/edit">Edit Post</a>
+
+            <form class="delete-form" method="post" action="/posts/<%= post.id %>?_method=DELETE">
+              <button class="delete-btn">Delete</button>
+            </form>
+          </div>
+        </div>
         <% } %>
       </div>
     </div>
