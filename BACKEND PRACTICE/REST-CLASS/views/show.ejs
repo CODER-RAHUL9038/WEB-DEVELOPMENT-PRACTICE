@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post In Details</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/show.css" />
   </head>
   <body>
     <div class="container">
       <h1>Your Post</h1>
-      <h3>Post id : <%= post.id %></h3>
-      <h3>Username : <%= post.username %></h3>
-      <p>Content : <%= post.content %></p>
-      <a href="/posts">back</a>
+      <h3 class="post-id">Post id : <%= post.id %></h3>
+      <h3 class="post-username">Username : <%= post.username %></h3>
+      <p class="post-content">Content : <%= post.content %></p>
+      <a  href="/posts">back</a>
     </div>
   </body>
 </html>

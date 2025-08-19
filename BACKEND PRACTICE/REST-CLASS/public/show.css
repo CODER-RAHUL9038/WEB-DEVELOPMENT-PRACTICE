@@ -1,0 +1,48 @@
+/* POST IN DETAILS PAGE */
+
+.container h1 {
+  text-align: center;
+  color: #b92b27; /* Quora red */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* POST CARD */
+.container .post-id,
+.container .post-username,
+.container .post-content {
+  max-width: 80%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover effect for post card items */
+.container .post-id:hover,
+.container .post-username:hover,
+.container .post-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* BACK LINK BUTTON */
+.container a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #3498db; /* blue for back */
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.container a:hover {
+  background-color: #217dbb;
+  transform: translateY(-2px);
+}

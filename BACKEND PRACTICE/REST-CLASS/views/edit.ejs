@@ -4,27 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Your Post</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/edit.css" />
   </head>
   <body>
     <div class="container">
-      <h1 id="site-title">Quora</h1>
-      <h2 id="all-posts-heading">Edit Post</h2>
-
-      <div class="post-card">
-        <h4 class="post-id">Post Id : <%= post.id %></h4>
-        <h4 class="post-username">Username : <%= post.username %></h4>
-
-        <form class="edit-form" method="post" action="/posts/<%= post.id %>?_method=PATCH">
-          <textarea
-            class="post-content-input"
-            rows="10"
-            cols="50"
-            name="content"
-            id="content"
-          ><%= post.content %></textarea>
-          <br />
-          <button class="submit-btn">Update</button>
+      <div class="post">
+        <h3 class="post-id">Post id : <%= post.id %></h3>
+        <h3 class="post-username">Username : <%= post.username %></h3>
+        <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+          <textarea rows="5" cols="45" name="content" id="content"><%= post.content %></textarea><br />
+          <button class="submit">Update</button>
         </form>
       </div>
     </div>
