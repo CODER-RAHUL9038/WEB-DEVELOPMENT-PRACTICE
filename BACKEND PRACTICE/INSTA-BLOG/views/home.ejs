@@ -1,23 +1,74 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Posts</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <h1>Insta-Blog</h1>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
     <div class="container">
+      <h1>Insta-Blog</h1>
+      <a class="create" href="/posts/new">Create new post</a>
+      <div class="post-container">
         <% for(let post of posts ) { %>
-        <div class="post">
+      <div class="post">
             <h3>Post Id : <%= post.id %></h3>
             <h3>Username : <%= post.username %></h3>
-            <h3>Content : <%= post.content %></h3>
-            <p>Image: <%= post.image %></p>
+            <h3>caption : <%= post.caption %></h3>
+            <img
+            class="post-image"
+            src="<%= post.image %>"
+            alt="post image"
+            /><br /><br />
+
+            <a href="/posts/<%= post.id %>">See in detail</a>
+      </div>
+      <% } %>
+      </div>
+      
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Insta-Blog</h1>
+      <a class="create" href="/posts/new">Create new post</a>
+
+      <div class="post-container">
+        <% for(let post of posts) { %>
+        <div class="insta-card">
+          <!-- Header -->
+          <div class="insta-header">
+            <img src="<%= post.image %>" alt="Profile" class="profile-pic" />
+            <span class="username"><%= post.username %></span>
+          </div>
+
+          <!-- Post Image -->
+          <img class="post-image" src="<%= post.image %>" alt="post image" />
+
+          <!-- Caption -->
+          <div class="caption">
+            <span class="username"><%= post.username %> :</span>
+            <%= post.caption %>
+          </div>
+
+          <!-- Footer -->
+          <div class="insta-footer">
+            <a href="/posts/<%= post.id %>" class="detail-btn">See in detail</a>
+          </div>
         </div>
         <% } %>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

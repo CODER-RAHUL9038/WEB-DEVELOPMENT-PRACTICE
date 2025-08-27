@@ -1,0 +1,122 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detailed Post</title>
+        <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Post Details</h1>
+      <div class="post">
+        <h3>Post Id : <%= post.id %></h3>
+        <h3>Username : <%= post.username %></h3>
+        <h3>caption : <%= post.caption %></h3>
+        <p>Image: <%= post.image %></p>
+        <a href="/posts">⬅ Back</a>
+      </div>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detailed Post</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fafafa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 10px;
+      }
+
+      .post-card {
+        margin-top: 15%;
+        background: #fff;
+        border: 1px solid #dbdbdb;
+        border-radius: 8px;
+        
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .post-header {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #dbdbdb;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ccc;
+        margin-right: 12px;
+      }
+
+      .username {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .post-image {
+        width: 100%;
+        display: block;
+       border-radius: 8px;
+      }
+
+      .post-caption {
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #3897f0;
+        font-weight: 600;
+        position:fixed;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <a href="/posts" class="back-link">⬅ Back to Feed</a>
+    <div class="container">
+      <div class="post-card">
+        <!-- Post Header -->
+        <div class="post-header">
+          <img src="<%= post.image %>" class="avatar" alt="Profile" />
+          <span class="username"><%= post.username %></span>
+        </div>
+
+        <!-- Post Image -->
+        <img src="<%= post.image %>" alt="Post Image" class="post-image" />
+
+        <!-- Caption -->
+        <div class="post-caption">
+          <p><strong><%= post.username %></strong> <%= post.caption %></p>
+          <small style="color: #999">Post ID: <%= post.id %></small>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
