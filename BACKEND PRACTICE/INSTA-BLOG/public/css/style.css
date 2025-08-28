@@ -108,13 +108,12 @@ h1 {
 
 .delete {
   border: none;
-  background-color: #0077cc;
-  color: white;
+  background-color: #ffffff;
+  color:  #0095F6;
   border-radius: 3px;
   padding: 2px 8px;
+  font-size: 14px;
 }
 .delete:hover {
-  background-color: #0077cc;
-  transform: scale(0.95);
-  transition: transform 0.2s ease-in-out;
+    text-decoration: underline;
 }
