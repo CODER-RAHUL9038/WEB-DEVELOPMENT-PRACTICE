@@ -7,13 +7,14 @@
 }
 
 body {
-  background-image: linear-gradient(to right, red, blue, yellow);
-  min-height: 100vh;
+  background-color: #fafafa;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #333;
 }
+
 
 .container {
   background: #fff;

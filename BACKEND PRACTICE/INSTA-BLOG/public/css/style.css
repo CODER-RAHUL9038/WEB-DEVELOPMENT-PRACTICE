@@ -1,16 +1,14 @@
-
-
 body {
   font-family: Arial, sans-serif;
   background: #fafafa;
   margin: 0;
   padding: 20px;
+  height: 100dvh;
 }
 
 .container {
-  max-width: 500px;
-
-  margin: auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -19,6 +17,8 @@ h1 {
 }
 
 .create {
+  margin: 0 auto;
+  max-width: 70%;
   display: block;
   text-align: center;
   margin-bottom: 20px;
@@ -41,12 +41,11 @@ h1 {
 
 /* Instagram card */
 .insta-card {
-
   background: white;
   border: 1px solid #dbdbdb;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .insta-header {
@@ -60,7 +59,6 @@ h1 {
   height: 35px;
   border-radius: 50%;
   margin-right: 10px;
- 
 }
 
 .username {
@@ -70,13 +68,12 @@ h1 {
 
 .post-image {
   width: 100%;
- max-height: 300px;
+  max-height: 400px;
   aspect-ratio: 1/1;
-  
-  object-fit:contain;
+
+  object-fit: auto;
   transform: scale(0.9);
   border-radius: 8px;
-   
 }
 
 .caption {
@@ -89,16 +86,35 @@ h1 {
 }
 
 .insta-footer {
+  display: flex;
+  justify-content: space-evenly;
   padding: 10px;
   border-top: 1px solid #efefef;
 }
 
-.detail-btn {
+.detail-btn,
+.delete-btn,
+.edit-btn {
   color: #0095f6;
   text-decoration: none;
   font-size: 14px;
 }
 
-.detail-btn:hover {
+.detail-btn:hover,
+.delete-btn:hover,
+.edit-btn:hover {
   text-decoration: underline;
+}
+
+.delete {
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 3px;
+  padding: 2px 8px;
+}
+.delete:hover {
+  background-color: #0077cc;
+  transform: scale(0.95);
+  transition: transform 0.2s ease-in-out;
 }
