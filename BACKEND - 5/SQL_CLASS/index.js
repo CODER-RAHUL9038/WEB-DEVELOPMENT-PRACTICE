@@ -11,21 +11,35 @@ async function main() {
       database: "delta_app",
     });
 
+    //USING FAKER
+    let getData = () => {
+      return [
+        faker.string.uuid(),
+        faker.internet.username(),
+        faker.internet.email(),
+        faker.internet.password(),
+      ];
+    };
+    // INSERTING BULK DATA
+    let data = [];
+    for (i = 0; i <= 100; i++) {
+      data.push(getData());
+    }
+
     //INSERTING NEW DATA
     const commands = "insert into user(id, username, email, password) values ?";
-    const users = [
-      [12238, "12368_newuser", "abnbcg@gmail.com", "1228abc"],
-      [1234, "1234_newuser", "abc@gmail.com", "126abc"],
-    ];
+    // const users = [
+    //   [12238, "12368_newuser", "abnbcg@gmail.com", "1228abc"],
+    //   [1234, "1234_newuser", "abc@gmail.com", "126abc"],
+    // ];
 
     //DESTRUCTURING DATA AFTER EXECUTION
-    const [rows] = await connection.query(commands, [users]);
+    const [rows] = await connection.query(commands, [data]);
+    
+
     // TO ONLY SEE THE TALBE NAMES
     // const row = rows.map((r) => Object.values(r)[0])
     // console.log(row);
-    console.log(rows);
-    // console.log(fields); //metadata
-    // console.log("array length :", rows.length);
     await connection.end();
   } catch (error) {
     console.log(error);
@@ -33,13 +47,3 @@ async function main() {
 }
 
 main();
-
-//USING FAKER
-let getRandomUser = () => {
-  return {
-    id: faker.string.uuid(),
-    username: faker.internet.username(),
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-  };
-};
