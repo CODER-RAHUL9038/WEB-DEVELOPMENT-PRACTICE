@@ -1,49 +1,57 @@
 const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2/promise");
+const express = require("express");
+const app = express();
+const { v4: uuidv4 } = require("uuid");
 
-async function main() {
+//HOME PAGE
+app.get("/", async (req, res) => {
   try {
-    // create a connection
-    const connection = await mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "Jaicoder123@",
-      database: "delta_app",
-    });
-
-    //USING FAKER
-    let getData = () => {
-      return [
-        faker.string.uuid(),
-        faker.internet.username(),
-        faker.internet.email(),
-        faker.internet.password(),
-      ];
-    };
-    // INSERTING BULK DATA
-    let data = [];
-    for (i = 0; i <= 100; i++) {
-      data.push(getData());
-    }
-
-    //INSERTING NEW DATA
-    const commands = "insert into user(id, username, email, password) values ?";
-    // const users = [
-    //   [12238, "12368_newuser", "abnbcg@gmail.com", "1228abc"],
-    //   [1234, "1234_newuser", "abc@gmail.com", "126abc"],
-    // ];
-
-    //DESTRUCTURING DATA AFTER EXECUTION
-    const [rows] = await connection.query(commands, [data]);
-    
-
-    // TO ONLY SEE THE TALBE NAMES
-    // const row = rows.map((r) => Object.values(r)[0])
-    // console.log(row);
-    await connection.end();
+    const q = "select count(*) as total_user from user";
+    const [rows] = await connection.query(q);
+    const count = rows[0].total_user;
+    res.send(count);
+    // res.render("home.ejs", { count });
   } catch (error) {
+    res.status(500).send("something Went Wrong!");
     console.log(error);
+  }
+});
+
+//SETTING UP DATABASE AND SERVER
+
+let connection;
+async function initDb(retries = 3, delay = 2000) {
+  for (let i = 1; i <= retries; i++) {
+    try {
+      // create a connection
+      connection = await mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "Jaicoder123@",
+        database: "delta_app",
+      });
+      console.log("✅ DB connected");
+
+      app.listen(8080, () => {
+        console.log("listening to port : 8080");
+      });
+      return;
+    } catch (error) {
+      console.error(
+        `❌ DB connection failed for ${i} attempt and pausing for ${
+          delay / 1000
+        } Seconds`,
+        error.message
+      );
+      if (i < 3) {
+        await new Promise((res) => setTimeout(res, delay));
+      } else {
+        console.log("❌ All retries failed. Exiting...");
+        process.exit(1);
+      }
+    }
   }
 }
 
-main();
+initDb(5,6000);
