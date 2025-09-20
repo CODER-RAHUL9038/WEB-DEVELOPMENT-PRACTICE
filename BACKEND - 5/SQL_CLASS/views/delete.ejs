@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Username</title>
+    <title>Delete User</title>
     <style>
       :root{
         --bg1: #0f172a;
         --bg2: #102040;
         --card: rgba(255,255,255,0.06);
-        --accent: #1d4ed8;
-        --accent-2: #3b82f6;
+        --accent: #e63946;
+        --accent-2: #ff7b7b;
       }
 
       *{box-sizing:border-box}
@@ -32,7 +32,7 @@
 
       .card{
         width:100%;
-        max-width:500px;
+        max-width:480px;
         background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
         border:1px solid rgba(255,255,255,0.08);
         border-radius:14px;
@@ -42,36 +42,22 @@
         backdrop-filter: blur(6px);
       }
 
+      h1{
+        font-size:24px;
+        margin-bottom:10px;
+      }
       h2{
-        font-size:20px;
-        font-weight:500;
-        margin-bottom:16px;
-        color:rgba(255,255,255,0.9);
+        font-size:18px;
+        font-weight:400;
+        color:rgba(255,255,255,0.85);
       }
 
       form{
+        margin-top:18px;
         display:flex;
         flex-direction:column;
         gap:16px;
         align-items:center;
-      }
-
-      textarea{
-        width:100%;
-        max-width:300px;
-        min-height:60px;
-        padding:10px 14px;
-        border-radius:10px;
-        border:1px solid rgba(255,255,255,0.2);
-        background:rgba(255,255,255,0.1);
-        color:#fff;
-        font-size:15px;
-        resize: none;
-      }
-      textarea:focus{
-        outline:none;
-        border-color:var(--accent);
-        box-shadow:0 0 0 2px rgba(29,78,216,0.4);
       }
 
       input[type="password"]{
@@ -82,12 +68,12 @@
         color:#fff;
         font-size:15px;
         width:100%;
-        max-width:300px;
+        max-width:260px;
       }
       input[type="password"]:focus{
         outline:none;
         border-color:var(--accent);
-        box-shadow:0 0 0 2px rgba(29,78,216,0.4);
+        box-shadow:0 0 0 2px rgba(230,57,70,0.4);
       }
 
       button{
@@ -100,23 +86,25 @@
         min-width:150px;
         background: linear-gradient(90deg,var(--accent), var(--accent-2));
         color:#fff;
-        box-shadow: 0 8px 18px rgba(29,78,216,0.2), 0 2px 6px rgba(0,0,0,0.4) inset;
+        box-shadow: 0 8px 18px rgba(230,57,70,0.15), 0 2px 6px rgba(0,0,0,0.4) inset;
         transition: transform .12s ease, box-shadow .12s ease;
       }
-      button:hover{transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29,78,216,0.3)}
+      button:hover{transform: translateY(-3px); box-shadow: 0 12px 30px rgba(230,57,70,0.2)}
       button:active{transform: translateY(-1px)}
+
     </style>
   </head>
   <body>
     <div class="wrap">
       <div class="card">
-        <h2>You can edit your Username: <%= user.username %></h2>
-        <form method="post" action="/user/<%= user.id %>?_method=PATCH">
-          <textarea name="username" id="username"><%= user.username %></textarea>
-          <input type="password" name="password" placeholder="Enter password" required />
-          <button type="submit">Edit</button>
+        <h1>Delete User</h1>
+        <h2>Id : <%= user.id %></h2>
+        <form method="post" action="/user/<%= user.id %>?_method=DELETE">
+          <label for="password">Verify Your Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Delete</button>
         </form>
       </div>
     </div>
   </body>
-</html> 
+</html>

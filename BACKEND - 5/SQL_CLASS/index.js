@@ -6,6 +6,7 @@ const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const id = uuidv4();
 const methodOverride = require("method-override");
+const { connect } = require("http2");
 
 // SETTING EJS
 app.set("view engine", "ejs");
@@ -50,8 +51,8 @@ app.get("/user", async (req, res) => {
 app.get("/user/:id/edit", async (req, res) => {
   try {
     let { id } = req.params;
-    const q = `select * from user where id = '${id}'`;
-    const [rows] = await connection.query(q);
+    const q = `select * from user where id = ?`;
+    const [rows] = await connection.query(q, [id]);
     let user = rows[0];
     res.render("edit.ejs", { user });
   } catch (error) {
@@ -65,7 +66,7 @@ app.patch("/user/:id", async (req, res) => {
   try {
     //FETCHING USER BASED ON CORRECT ID
     let { id } = req.params;
-    const q = "select * from user where id = ?";
+    const q = `select * from user where id = ?`;
     const [rows] = await connection.query(q, [id]);
     let user = rows[0];
     if (!user) return res.send("User not found");
@@ -74,7 +75,7 @@ app.patch("/user/:id", async (req, res) => {
     let { username: newUsername, password: formPass } = req.body;
     //CHECKING DB AND FORM PASSWORD
     if (formPass != user.password) {
-      res.send("Wrong Password");
+      res.render("wrong_pass.ejs");
     } else {
       const q1 = "update user set username = ? where id = ? ";
       const [result] = await connection.query(q1, [newUsername, id]);
@@ -83,6 +84,65 @@ app.patch("/user/:id", async (req, res) => {
   } catch (error) {
     res.status(500).send("Some error occured in Update Page!");
     console.log(error);
+  }
+});
+
+// ADDING NEW USER
+app.get("/user/new", (req, res) => {
+  res.render("add.ejs");
+});
+
+//POST ROUTE FOR NEW USER
+app.post("/user", async (req, res) => {
+  try {
+    let { username: newUser, email: formEmail, password: formPass } = req.body;
+    let id = uuidv4();
+    let q = ` insert into user values ?`;
+    values = [[id, newUser, formEmail, formPass]];
+    let rows = await connection.query(q, [values]); // will return and array of array.
+    console.log(rows[0]);
+    res.redirect("/user");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Some error occured in adding new user!");
+  }
+});
+
+//DELETE ROUTE
+
+// GET REQUEST TO SERVE DELET FORM
+app.get("/user/:id", async (req, res) => {
+  try {
+    let { id } = req.params;
+    const q = `select * from user where id = ?`;
+    const [rows] = await connection.query(q, [id]);
+    let user = rows[0];
+    res.render("delete.ejs", { user });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Some error occured in adding new user!");
+  }
+});
+
+//DELETE ROUTE TO DELETE USER AFTER VERIFYING PASSWORD
+app.delete("/user/:id", async (req, res) => {
+  try {
+    let { id } = req.params;
+    let { password } = req.body;
+    const q = `select * from user where id = ?`;
+    const [rows] = await connection.query(q, [id]);
+    let user = rows[0];
+    if (password != user.password) {
+      res.render("wrong_pass.ejs"); 
+    } else {
+      let q1 = `delete from user where id = ?`;
+      let result = await connection.query(q1, [id]);
+      console.log(`Deleted User : ${user.username}`);
+      res.redirect("/user");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Some error occured in  delete user page!");
   }
 });
 
