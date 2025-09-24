@@ -135,3 +135,8 @@ class Cat extends Mammals {
   }
 }
 let dog1 = new Dog("lusy"); // Dog {Name: 'lusy', type: 'warm-blooded'}
+let cat1 = new Cat("billi");
+console.log(dog1);
+console.log(cat1);
+
+console.log(dog1.eat() === cat1.eat()); //True
