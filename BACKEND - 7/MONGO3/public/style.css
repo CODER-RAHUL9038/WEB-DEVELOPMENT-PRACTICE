@@ -1,0 +1,121 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.new_msg {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  display: inline-block;
+  margin-left: 1rem;
+  background-color: #25d366; /* WhatsApp green */
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.new_msg:hover {
+  background-color: #20b857;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  background-color: #075e54;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 20px;
+  color: #222;
+  position: relative;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Page title */
+h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: #075e54;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual chat card */
+.chat {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-left: 6px solid #1d8d46
+}
+
+/* Hover effect */
+.chat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sender and Receiver */
+.chat p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.chat p strong {
+  color: #075e54;
+}
+
+/* Message styling */
+.chat .msg {
+  background-color: #e1ffc7;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Timestamp */
+.chat .time {
+  text-align: right;
+  color: #777;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #25d366;
+  border-radius: 5px;
+}

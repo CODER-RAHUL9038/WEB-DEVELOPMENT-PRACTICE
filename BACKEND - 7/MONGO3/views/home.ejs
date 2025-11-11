@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Whatsapp</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <a class="new_msg" href="/chats/new">New Chat </a>
+    <div class="container">
+      
+      <h3>All Chats</h3>
+
+      <% for (let chat of chats) { %>
+      <div class="chat">
+        <p><strong>From:</strong> <%= chat.from %></p>
+        <p><strong>To:</strong> <%= chat.to %></p>
+        <p class="msg"><%= chat.msg %></p>
+        <p class="time">
+          <%= new Date(chat.created_at).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) %>
+        </p>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

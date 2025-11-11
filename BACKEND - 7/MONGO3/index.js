@@ -3,9 +3,13 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
+const { url } = require("inspector");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
 
 main()
   .then((res) => {
@@ -19,21 +23,17 @@ async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/Whatsapp");
 }
 
-let chat1 = new Chat({
-  from: "Elon Musk",
-  to: "Rahul Shaw",
-  msg: "Please send me your resume",
-  created_at: new Date(),
+//Index Route
+app.get("/chats", async (req, res) => {
+  let chats = await Chat.find({});
+  console.log(chats);
+  res.render("home.ejs", { chats });
 });
 
-chat1
-  .save()
-  .then((res) => {
-    console.log("✅Saved to DB:", res);
-  })
-  .catch((err) => {
-    console.log("❌Error saving In DB:", err);
-  });
+//Post Route
+app.get("/chats/new",(req,res)=>{
+  res.send(" Chat New working")
+})
 
 app.get("/", (req, res) => {
   res.send("Root working");
