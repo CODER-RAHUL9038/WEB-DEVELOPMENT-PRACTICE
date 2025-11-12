@@ -6,7 +6,7 @@
 }
 
 .new_msg {
-  position: fixed;
+  position: absolute;
   top: 2rem;
   left: 1rem;
   display: inline-block;
@@ -17,10 +17,27 @@
   padding: 12px 24px;
   border-radius: 30px;
   font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.edit{
+  display: inline-block;
+  position: absolute;
+ left: 1rem;
+  bottom: 8px;
+
+  background-color: #25d366; /* WhatsApp green */
+  color: white;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-weight: 600;
   font-size: 16px;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 .new_msg:hover {
   background-color: #20b857;
   transform: translateY(-3px);
@@ -56,11 +73,12 @@ h3 {
   width: 100%;
   text-align: center;
   font-size: 28px;
-  color: #075e54;
+  color: #fff;
   margin-bottom: 30px;
   font-weight: 700;
   letter-spacing: 1px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 /* Individual chat card */
@@ -73,7 +91,8 @@ h3 {
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  border-left: 6px solid #1d8d46
+  border-left: 6px solid #1d8d46;
+  position: relative;
 }
 
 /* Hover effect */

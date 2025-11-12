@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Send New Message</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send New Message</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+     
+
+       background-color: #075e54;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background-color: #ffffff;
+      width: 380px;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      border-top: 5px solid #25d366;
+    }
+
+    h3 {
+      text-align: center;
+      color: #075e54;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s;
+      background-color: #f9f9f9;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #25d366;
+      background-color: #ffffff;
+      box-shadow: 0 0 5px rgba(37, 211, 102, 0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #20b857;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #075e54;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .back-link a:hover {
+      color: #25d366;
+    }
+
+    ::placeholder {
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-    
+  <form method="post" action="/chats">
+    <h3>💬 New WhatsApp Message</h3>
+    <input type="text" name="from" placeholder="Your Name" required />
+    <textarea name="msg" placeholder="Type your message..." required></textarea>
+    <input type="text" name="to" placeholder="Recipient Name" required />
+    <button>Send Message 🚀</button>
+    <div class="back-link">
+      <a href="/chats">⬅ Back to Chats</a>
+    </div>
+  </form>
 </body>
 </html>

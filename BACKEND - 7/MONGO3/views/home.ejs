@@ -10,7 +10,7 @@
     <a class="new_msg" href="/chats/new">New Chat </a>
     <div class="container">
       
-      <h3>All Chats</h3>
+      <h3>Whatsapp</h3>
 
       <% for (let chat of chats) { %>
       <div class="chat">
@@ -20,8 +20,9 @@
         <p class="time">
           <%= new Date(chat.created_at).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) %>
         </p>
+        <a class="edit" href="/chats/<%= chat._id %>/edit">Edit</a>
       </div>
-      <% } %>
+      <% } %> 
     </div>
   </body>
 </html>
