@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
 
-const chatSchema = new mongoose.Schema({
-  from: {
-    type: String,
-    required: true,
+const chatSchema = new mongoose.Schema(
+  {
+    from: {
+      type: String,
+      required: true,
+    },
+    to: {
+      type: String,
+      required: true,
+    },
+    msg: {
+      type: String,
+      maxLength: 500,
+    },
   },
-  to: {
-    type: String,
-    required: true,
-  },
-  msg: {
-    type: String,
-    maxLength: 500,
-  },
-  created_at: {
-    type: Date,
-    required:true,
-  },
-});
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+);
 
 const Chat = mongoose.model("Chat", chatSchema);
 //exporting model
