@@ -82,6 +82,19 @@ app.put("/chats/:id", (req, res) => {
   res.redirect("/chats");
 });
 
+//Handle route
+app.delete("/chats/:id", (req, res) => {
+  let { id } = req.params;
+  let chat = Chat.findByIdAndDelete(id, { new: true })
+    .then((res) => {
+      console.log("✅Message Deleted from DB:", res);
+    })
+    .catch((err) => {
+      console.log("❌Error Deleting message from DB:", err);
+    });
+  res.redirect("/chats");
+});
+
 app.get("/", (req, res) => {
   res.send("Root working");
 });

@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <a class="new_msg" href="/chats/new">New Chat </a>
+     
     <div class="container">
-      <h3>Whatsapp</h3>
+     <a class="new_msg" href="/chats/new">New Chat</a>
+      <h3>Whatsapp Dashboard</h3>
 
       <% for (let chat of chats) { %>
       <div class="chat">
@@ -27,7 +28,10 @@
 
         <div class="bottom">
           <a class="edit" href="/chats/<%= chat._id %>/edit">Edit</a>
-          <a class="delete" href="/chats/<%= chat._id %>/edit">Delete</a>
+
+          <form method="post" action="/chats/<%= chat._id %>?_method=DELETE">
+            <button class="delete">Delete</button>
+          </form>
         </div>
       </div>
       <% } %>
