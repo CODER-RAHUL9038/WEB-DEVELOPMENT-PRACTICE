@@ -35,9 +35,18 @@ app.get("/api", checkToken, (req, res) => {
   res.send("This is the Private Data of out valuable customer");
 });
 
-app.use("/admin",(req,res)=>{
-    throw new ExpressError(403,"Access to Admin is forbidden")
-})
+app.use("/admin", (req, res) => {
+  throw new ExpressError(403, "Access to Admin is forbidden");
+});
+
+//Async Wrap function
+function asyncWrap(fn) {
+  return function (req, res, next) {
+    fn(req, res, next).catch((err) => next(err));
+  };
+}
+
+// We can use the above asyncWrap function insteas of try and catch 
 
 app.get("/test", (req, res) => {
   res.send("Hi i am root");
