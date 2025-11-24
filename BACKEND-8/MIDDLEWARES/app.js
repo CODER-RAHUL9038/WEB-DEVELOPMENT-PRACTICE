@@ -46,7 +46,24 @@ function asyncWrap(fn) {
   };
 }
 
-// We can use the above asyncWrap function insteas of try and catch 
+// We can use the above asyncWrap function insteas of try and catch
+
+
+
+
+//Handling Mongoose error
+const handleValidationErr = (err) => {
+  console.log("Validation Error Occured");
+  return err;
+};
+
+app.use((err, req, res, next) => {
+  console.log(err.name);
+  if (err.name == "ValidationError") {
+    err == handleValidationErr;
+  }
+  next(err);
+});
 
 app.get("/test", (req, res) => {
   res.send("Hi i am root");
