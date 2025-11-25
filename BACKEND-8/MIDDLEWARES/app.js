@@ -53,14 +53,14 @@ function asyncWrap(fn) {
 
 //Handling Mongoose error
 const handleValidationErr = (err) => {
-  console.log("Validation Error Occured");
+  console.log("Validation Error Occured.Please Check the Schema Rules");
   return err;
 };
 
 app.use((err, req, res, next) => {
   console.log(err.name);
   if (err.name == "ValidationError") {
-    err == handleValidationErr;
+    err == handleValidation(err);
   }
   next(err);
 });
