@@ -20,9 +20,6 @@ const orderSchema = new Schema({
   price: Number,
 });
 
-//Model
-const Order = mongoose.model("Order", orderSchema);
-
 // //One to many relation approach
 // const addUsers = async () => {
 //   const res = await Order.insertMany([
@@ -46,8 +43,19 @@ const CustomerSchema = new Schema({
   ],
 });
 
+// Post middleware alwayd written before model creation
+CustomerSchema.post("findOneAndDelete", async (customer) => {
+  if (customer.orders.length) {
+    let res = await Order.deleteMany({ _id: { $in: customer.orders } });
+    console.log(res);
+  }
+  ``;
+});
+
 // Customer Model
 const Customer = mongoose.model("Customer", CustomerSchema);
+//Model
+const Order = mongoose.model("Order", orderSchema);
 
 // const addCustomer = async () => {
 //   const customer1 = new Customer({
@@ -75,19 +83,25 @@ const Customer = mongoose.model("Customer", CustomerSchema);
 
 const addData = async () => {
   let newCustomer = new Customer({
-    name: "Karan Singh",
+    name: "Rajiv Sukha",
   });
 
   let newOrder = new Order({
-    item: "Pizza",
-    price: 250,
+    item: "Masala",
+    price: 165,
   });
   newCustomer.orders.push(newOrder);
   await newOrder.save();
   await newCustomer.save();
   console.log("added new cutomerand order");
 };
+// addData();
 
+//findByIdAndDelete will call findOneAndDelete and execute pre or post middleware
+const delCust = async () => {
+  let data = await Customer.findOneAndDelete({
+    _id: "692c6a7b103dc4a0f895813b",
+  });
+};
 
-
-addData();
+delCust();
