@@ -66,9 +66,28 @@ const Customer = mongoose.model("Customer", CustomerSchema);
 
 // addCustomer();
 
-// Using Populate to Replace reference id to original object using result[0]
-const findCustomer = async () => {
-  let result = await Customer.find({ name: "Rahul" }).populate("orders");
-  console.log(result[0]);
+// // Using Populate to Replace reference id to original object using result[0]
+// const findCustomer = async () => {
+//   let result = await Customer.find({ name: "Rahul" }).populate("orders");
+//   console.log(result[0]);
+// };
+// findCustomer();
+
+const addData = async () => {
+  let newCustomer = new Customer({
+    name: "Karan Singh",
+  });
+
+  let newOrder = new Order({
+    item: "Pizza",
+    price: 250,
+  });
+  newCustomer.orders.push(newOrder);
+  await newOrder.save();
+  await newCustomer.save();
+  console.log("added new cutomerand order");
 };
-findCustomer();
+
+
+
+addData();
