@@ -1,8 +1,10 @@
 .Product {
-  border: 2px solid white;
+  border: 2px solid black;
   margin: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 12  px 50px whitesmoke;
-
+  min-width: 200px;
+  color: black;
+   
+  
 }

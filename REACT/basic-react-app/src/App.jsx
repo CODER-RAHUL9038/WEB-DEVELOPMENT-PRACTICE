@@ -1,12 +1,11 @@
 import "./App.css";
-import MessageBox from "./MessageBox.jsx";
+
 import ProductTab from "./ProductTab.jsx";
 
 function App() {
   return (
     <>
-      <MessageBox userName="Rahul" textColor="pink" />
-      <MessageBox userName="Elon" textColor="blue " />
+      <h2 style={{color :"black"}}>BlockBuster Deals | Shop Now</h2>
       <ProductTab />
     </>
   );

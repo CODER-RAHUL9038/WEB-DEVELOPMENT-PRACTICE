@@ -1,13 +1,22 @@
 import "./Product.css";
+import Price from "./Price.jsx";
 
-function Product({ title, price = 1, features, feature2 }) {
-  let isDiscount = price > 2000;
-  let style = { backgroundColor: isDiscount ? "blue" : null };
+function Product({ title, idx }) {
+  let oldPrice = ["12,495", "11,990", "1,599", "599"];
+  let newPrice = ["8,999", "9,199", "899", "278"];
+  let description = [
+    ["80000 DPI", "5 Programmable Buttons"],
+    ["Intuitive Surface", "Designed for Ipad Pro"],
+    ["Designed for Ipad Pro", "Designed got Apple"],
+    ["Wireless", "Optical Orientation"],
+  ];
+
   return (
-    <div className="Product" style={style}>
-      <h2>{title}</h2>
-      <p>{price}</p>
-      {isDiscount && <p>Discount of 5 %</p>}
+    <div className="Product">
+      <h4>{title}</h4>
+      <p>{description[idx][0]}</p>
+      <p>{description[idx][1]}</p>
+      <Price oldPrice={oldPrice[idx]} newPrice={newPrice[idx]} />
     </div>
   );
 }

@@ -1,17 +1,15 @@
 import Product from "./Product";
 
 function ProductTab() {
-  let options = ["Nice", "Durable", "Hardy"];
-  let optionObj = {
-    name: "Rahul",
-    age: 25,
-  };
+  let styles = { display: "flex", flexWrap: "wrap", flex: "1" };
   return (
-    <>
-      <Product title="Phone" price={300} />
-      <Product title="Laptop" price={2999} />
-      <Product title="IPhone" />
-    </>
+    <div style={styles}>
+     
+      <Product title="Logitech MX Master" idx={0} />
+      <Product title="Apple Pencil (2nd Gen)" idx={1} />
+      <Product title="Zebronics Zev thunder" idx={2} />
+      <Product title="Dell Vostro" idx={3} />
+    </div>
   );
 }
 
