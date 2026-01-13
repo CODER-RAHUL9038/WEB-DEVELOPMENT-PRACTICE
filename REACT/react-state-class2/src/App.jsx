@@ -1,10 +1,12 @@
-import LudoBoard from "./LudoBoard";
 import "./App.css";
+import Todo from "./Todo";
 
 function App() {
-  return <>
-  <LudoBoard></LudoBoard>
-  </>;
+  return (
+    <>
+      <Todo></Todo>
+    </>
+  );
 }
 
 export default App;
