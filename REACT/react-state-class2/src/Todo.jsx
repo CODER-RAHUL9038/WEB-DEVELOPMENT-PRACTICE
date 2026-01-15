@@ -1,36 +1,48 @@
-import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-
+import "./Todo.css";
+import { v4 as uuidv4 } from "uuid";
 export default function Todo() {
-  let [todo, setTodo] = useState([{ task: "sample", id: uuidv4() }]);
+  let [todos, setTodos] = useState([{ task: "Code", id: uuidv4() }]);
   let [newTodo, setNewTodo] = useState("");
 
-  function updateTodo(e) {
+  function TrackInput(e) {
     setNewTodo(e.target.value);
   }
+
   function addTask() {
-    setTodo([...todo, { task: newTodo, id: uuidv4() }]);
+    setTodos((prevTodos) => [...prevTodos, { task: newTodo, id: uuidv4() }]);
     setNewTodo("");
   }
+  function deleteTask(id) {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id != id));
+  }
+
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="todo-container">
+      <h1 className="title">Todo App</h1>
 
-      <input
-        type="text"
-        value={newTodo}
-        onChange={updateTodo}
-        style={{ marginRight: "10px" }}
-      />
-      <button onClick={addTask}>Add</button>
-
-      <div className="display" style={{ marginTop: "2rem" }}>
-        <ul>
-          {todo.map((el) => (
-            <li key={el.id}>{el.task}</li>
-          ))}
-        </ul>
+      <div className="input-box">
+        <input
+          value={newTodo}
+          onChange={TrackInput}
+          type="text"
+          placeholder="Enter task"
+        />
+        <button onClick={addTask}>Add Task</button>
       </div>
+
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.task}
+            <span>
+              <button onClick={() => deleteTask(todo.id)} className="delete">
+                Delete
+              </button>
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
