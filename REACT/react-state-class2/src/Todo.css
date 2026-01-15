@@ -1,7 +1,7 @@
 /* Container without background */
 .todo-container {
   width: 100%;
-  max-width: 450px;
+  min-width: 450px;
   margin: 40px auto;
   padding: 10px;
   font-family: Arial, sans-serif;
@@ -67,6 +67,7 @@
 .todo-list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 6px;
@@ -74,7 +75,10 @@
   color: #ffffff;
 }
 
-.delete {
+.delete,.upper-case-one {
   font-size: 0.8rem;
  padding: 8px;
+}
+.upper-case-one{
+    margin-left: 10px;
 }
