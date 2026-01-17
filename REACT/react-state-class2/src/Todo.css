@@ -75,10 +75,23 @@
   color: #ffffff;
 }
 
-.delete,.upper-case-one {
+.delete,
+.mark-as-done,.not-done {
   font-size: 0.8rem;
- padding: 8px;
+  padding: 8px;
+  margin-left: 10px;
 }
-.upper-case-one{
-    margin-left: 10px;
+.mark-as-done {
+  margin-left: 10px;
+  background-color: green;
+  color: black;
+}
+.not-done{
+    background-color: red;
+    
+}
+.done {
+  opacity: 0.85;
+  text-decoration: line-through;
+  color:#9CA3AF !important
 }

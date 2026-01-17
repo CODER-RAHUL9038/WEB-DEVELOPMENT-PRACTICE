@@ -16,12 +16,12 @@ export default function LikeButton() {
       <h3>Clicks - {clicks}</h3>
       <h2 onClick={toggleLike}>
         {isLiked == false ? (
+          <i className="fa-regular fa-heart" style={{ fontSize: "7rem" }}></i>
+        ) : (
           <i
             className="fa-solid fa-heart"
-            style={{ color: "red", fontSize: "7rem" }}
+            style={{ fontSize: "7rem", color: "red" }}
           ></i>
-        ) : (
-          <i className="fa-regular fa-heart" style={{ fontSize: "7rem" }}></i>
         )}
       </h2>
     </div>
