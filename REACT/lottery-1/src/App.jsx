@@ -1,6 +1,7 @@
 import "./App.css";
 import Lottery from "./Lottery";
 import { sum } from "./helper";
+import Form from "./Form";
 
 function App() {
   let winCondition = (array) => {
@@ -8,7 +9,8 @@ function App() {
   };
   return (
     <>
-      <Lottery n={3} winCondition={winCondition}></Lottery>
+      <Form />
+      {/* <Lottery n={3} winCondition={winCondition}></Lottery> */}
     </>
   );
 }
