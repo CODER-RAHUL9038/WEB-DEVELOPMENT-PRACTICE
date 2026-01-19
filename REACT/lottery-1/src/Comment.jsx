@@ -4,7 +4,7 @@ import "./Comment.css";
 
 export default function Comment() {
   const [comments, setComments] = useState([
-    { username: "Rahul", remarks: "Not Bad", rating: 2 },
+    { username: "Rahul", remarks: "Not so good", rating: 3 },
   ]);
 
   const addNewComment = (comment) => {

@@ -1,60 +1,87 @@
 import { useState } from "react";
+import { useFormik } from "formik";
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.username) {
+    errors.username = "Please Enter Username";
+  } else if (values.username.length > 15) {
+    errors.username = "Must be 15 characters or less";
+  }
+
+  return errors;
+};
 
 export default function CommentForm({ addNewComment }) {
-  let [formData, setFormData] = useState({
-    username: "",
-    remarks: "",
-    rating: "",
-  });
+  // let [formData, setFormData] = useState({
+  //   username: "",
+  //   remarks: "",
+  //   rating: "",
+  // });
 
-  let handleFieldChange = (e) => {
-    setFormData((prevForm) => ({
-      ...prevForm,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  let handleSubmit = (e) => {
-    e.preventDefault();
-    addNewComment(formData);
-    console.log(formData);
-    setFormData({
+  const formik = useFormik({
+    initialValues: {
       username: "",
       remarks: "",
       rating: "",
-    });
-  };
+    },
+    validate,
+    onSubmit: (values, { resetForm }) => {
+      addNewComment(values);
+      resetForm();
+    },
+  });
+
+  // let handleFieldChange = (e) => {
+  //   setFormData((prevForm) => ({
+  //     ...prevForm,
+  //     [e.target.name]: e.target.value,
+  //   }));
+  // };
+
+  // let handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   addNewComment(formData);
+  //   console.log(formData);
+  //   setFormData({
+  //     username: "",
+  //     remarks: "",
+  //     rating: "",
+  //   });
+  // };
 
   return (
     <div className="form-container">
       <h2>Give a Comment</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <label>Username</label>
         <input
           type="text"
           name="username"
-          value={formData.username}
-          onChange={handleFieldChange}
+          onChange={formik.handleChange}
+          value={formik.values.username}
           placeholder="Your name"
-          required
         />
-
+        {formik.touched.username && formik.errors.username && (
+          <div style={{ color: "red" }} className="error">
+            {formik.errors.username}
+          </div>
+        )}
         <label>Remarks</label>
         <textarea
           name="remarks"
-          value={formData.remarks}
-          onChange={handleFieldChange}
+          onChange={formik.handleChange}
+          value={formik.values.remarks}
           placeholder="Write something..."
-          required
         />
 
         <label>Rating</label>
         <input
           type="number"
           name="rating"
-          value={formData.rating}
-          onChange={handleFieldChange}
+          onChange={formik.handleChange}
+          value={formik.values.rating}
           min={1}
           max={5}
           required
