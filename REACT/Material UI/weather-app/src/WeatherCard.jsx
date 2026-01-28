@@ -1,43 +1,85 @@
 import Card from "@mui/material/Card";
-import "./WeatherCard.css";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export default function WeatherCard({ weather, city }) {
+export default function WeatherCard({ weather }) {
   const description = weather.weather[0].description;
   const icon = weather.weather[0].icon;
-  let iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
   return (
-    <div>
-      <div className="card-container">
-        <Card sx={{ width: "60%", maxWidth: "450px" }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image="https://images.unsplash.com/photo-1702365202240-ecf532732c76?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGF6ZSUyMHdlYXRoZXIlMjBrb2xrYXRhfGVufDB8fDB8fHww"
-            title="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {city}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        mt: 4,
+      }}
+    >
+      <Card
+        sx={{
+          width: "100%",
+          maxWidth: 420,
+
+          /* 🔮 Glass effect */
+          background: "rgba(255, 255, 255, 0.25)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+
+          borderRadius: "20px",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
+        }}
+      >
+        <CardMedia
+          sx={{
+            height: 140,
+            borderTopLeftRadius: "20px",
+            borderTopRightRadius: "20px",
+          }}
+          image="https://images.unsplash.com/photo-1702365202240-ecf532732c76"
+        />
+
+        <CardContent>
+          <Typography variant="h5" gutterBottom>
+            {weather.name}
+          </Typography>
+
+          {/* Temperature */}
+          <Typography variant="h3">
+            {Math.round(weather.main.temp)}°C
+          </Typography>
+
+          {/* Icon + description */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent:"center",
+              gap: 1,
+              mt: 1,
+            }}
+          >
+            <img src={iconUrl} alt="weather icon" width={48} />
+            <Typography variant="body1">{description}</Typography>
+          </Box>
+
+          {/* Details */}
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body2" color="text.secondary">
+              Feels like: {weather.main.feels_like}°C
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              🌡 Temperature: {weather.main.temp}°C <br />
-              🤒 Feels like: {weather.main.feels_like}°C <br />
-              🔼 Max: {weather.main.temp_max}°C <br />
-              🔽 Min: {weather.main.temp_min}°C <br />
-              💧 Humidity: {weather.main.humidity}% <br />
+            <Typography variant="body2" color="text.secondary">
+              Max: {weather.main.temp_max}°C | Min: {weather.main.temp_min}°C
             </Typography>
-            <Typography><img
-                className="icon-image"
-                src={iconUrl}
-                alt="description-image"
-              /> <span>{description}</span></Typography>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+            <Typography variant="body2" color="text.secondary">
+              Humidity: {weather.main.humidity}%
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Box>
   );
 }
