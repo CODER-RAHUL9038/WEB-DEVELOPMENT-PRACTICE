@@ -1,4 +1,3 @@
-
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
@@ -11,7 +10,6 @@ export default function SearchButton({ city, setCity, getWeather }) {
   };
   return (
     <div>
-      <h1>Search Box</h1>
       <form onSubmit={handleSubmit} action="/">
         <TextField
           id="outlined-basic"
