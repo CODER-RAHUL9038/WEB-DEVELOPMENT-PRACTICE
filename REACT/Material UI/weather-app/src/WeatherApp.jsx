@@ -3,8 +3,10 @@ import WeatherCard from "./WeatherCard";
 import SearchButton from "./SearchButton";
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import WeatherPlaceholder from "./WeatherPlaceholder";
 const API_URL = import.meta.env.VITE_WEATHER_API_URL;
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+import { Fade } from "@mui/material";
 
 export default function WeatherApp() {
   let [city, setCity] = useState("");
@@ -33,9 +35,11 @@ export default function WeatherApp() {
   };
   return (
     <Box
-      style={{
-        minHeight: "100vh",
-       
+      sx={{
+        minHeight: "100dvh",
+        display: "flex",
+
+        flexDirection: "column",
       }}
     >
       <SearchButton
@@ -44,7 +48,24 @@ export default function WeatherApp() {
         getWeather={getWeather}
         error={error}
       ></SearchButton>
-      {weather && <WeatherCard city={city} weather={weather} />}
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <Fade in={!Boolean(weather)} timeout={300}>
+          <Box sx={{ position: "absolute", width: "100%" }}>
+            <WeatherPlaceholder />
+          </Box>
+        </Fade>
+
+        <Fade in={Boolean(weather)} timeout={300}>
+          <Box>
+            <WeatherCard city={city} weather={weather} />
+            
+          </Box>
+        </Fade>
+      </Box>
     </Box>
   );
 }
