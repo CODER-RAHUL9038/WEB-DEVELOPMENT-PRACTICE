@@ -36,7 +36,12 @@ export default function SearchButton({ city, setCity, getWeather, error }) {
           size="small"
           onChange={(e) => setCity(e.target.value)}
           sx={{
-            width: 260,
+            maxWidth: 400,
+            minWidth: {
+              xs: 200, // mobile
+              sm: 350, // 📲 tablet taller
+              md: 250,
+            },
 
             /* Glass input */
             "& .MuiOutlinedInput-root": {

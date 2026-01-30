@@ -1,10 +1,9 @@
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Skeleton from "@mui/material/Skeleton";
+
 import CardMedia from "@mui/material/CardMedia";
-import Credit from "./Credit";
 
 export default function WeatherPlaceholder() {
   return (
@@ -20,10 +19,17 @@ export default function WeatherPlaceholder() {
       <Card
         sx={{
           width: "100%",
-          maxWidth: 420,
+          maxWidth: {
+            xs: 420, // mobile
+            sm: 700, // 📲 tablet bigger
+            md: 550, // desktop back to normal (optional)
+            xl:800
+          },
+
           minHeight: {
-            xs: 500, // 📱 taller on mobile
-            sm: 240, // 💻 normal on desktop
+            xs: 400, // mobile
+            sm: 750, // 📲 tablet taller
+            md: 350,
           },
 
           background: "rgba(255, 255, 255, 0.15)",
@@ -37,49 +43,53 @@ export default function WeatherPlaceholder() {
         {/* Image placeholder */}
         {/* <Skeleton variant="rectangular" height={190} /> */}
         <CardMedia
-          component="img"
+          component="video"
+          src="/earth2.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           sx={{
-            height: {
-              xs:"450px",
-              sm:"300px"
-            },
+            minHeight: { xs: 350, sm: 700, md: 310,xl:450  },
+            objectFit: "cover",
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
-            
+
+            animation: "softFade 4s infinite",
           }}
-          src="earth.jpg"
         />
-
-        <Typography
-          align="center"
+        <Box
           sx={{
-            mt: 1,
-            fontSize: "1.25rem"
-              
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "space-between",
           }}
         >
-          Check the weather anywhere 🌍
-        </Typography>
+          <Typography
+            align="center"
+            sx={{
+              mt: 1,
+              fontSize: "1.25rem",
+            }}
+          >
+            Check the weather anywhere 🌍
+          </Typography>
 
-        
+          <Typography
+            variant="caption"
+            sx={{
+              display: "block",
+              p: 1,
 
-        <Typography
-          variant="caption"
-          sx={{
-            display: "block",
-            p:1,
-            mt: {
-              xs: 1,
-              sm: 1,
-            },
-            opacity: 0.8,
-            fontSize: "0.9rem",
-          }}
-        >
-          Start by searching a city above
-        </Typography>
+              opacity: 0.8,
+              fontSize: "0.9rem",
+            }}
+          >
+            Start by searching a city above
+          </Typography>
+        </Box>
       </Card>
-      <Credit></Credit>
     </Box>
   );
 }

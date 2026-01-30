@@ -7,6 +7,7 @@ import WeatherPlaceholder from "./WeatherPlaceholder";
 const API_URL = import.meta.env.VITE_WEATHER_API_URL;
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 import { Fade } from "@mui/material";
+import Credit from "./Credit.jsx";
 
 export default function WeatherApp() {
   let [city, setCity] = useState("");
@@ -56,13 +57,14 @@ export default function WeatherApp() {
         <Fade in={!Boolean(weather)} timeout={300}>
           <Box sx={{ position: "absolute", width: "100%" }}>
             <WeatherPlaceholder />
+            <Credit></Credit>
           </Box>
         </Fade>
 
         <Fade in={Boolean(weather)} timeout={300}>
           <Box>
             <WeatherCard city={city} weather={weather} />
-            
+            <Credit></Credit>
           </Box>
         </Fade>
       </Box>

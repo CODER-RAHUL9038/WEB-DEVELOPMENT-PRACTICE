@@ -2,36 +2,38 @@ import { Box, Typography } from "@mui/material";
 
 export default function Credit() {
   return (
-    <Typography
-      variant="caption"
+    <Box
       sx={{
-        fontSize: "1rem",
-        opacity: 0.7,
-        mt: {
-          xs:6,
-          sm:2
-        },
-        letterSpacing: "0.15em",
-        fontWeight: 500,
-      
+        mt: 2,
       }}
     >
-      Developed by
-      <Box
-        component="a"
-        href="https://github.com/CODER-RAHUL9038"
-        target="_blank"
-        rel="noopener noreferrer"
+      <Typography
+        variant="caption"
         sx={{
-          color: "inherit",
-          textDecoration: "none",
+          fontSize: "1rem",
+          opacity: 0.7,
+
+          letterSpacing: "0.15em",
           fontWeight: 500,
-          ml: 1,
-          "&:hover": { textDecoration: "underline", color: "blue" },
         }}
       >
-        Rahul Shaw
-      </Box>
-    </Typography>
+        Developed by
+        <Box
+          component="a"
+          href="https://github.com/CODER-RAHUL9038"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "inherit",
+            textDecoration: "none",
+            fontWeight: 500,
+            ml: 1,
+            "&:hover": { textDecoration: "underline", color: "blue" },
+          }}
+        >
+          Rahul Shaw
+        </Box>
+      </Typography>
+    </Box>
   );
 }

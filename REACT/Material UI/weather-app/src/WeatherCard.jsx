@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Credit from "./Credit.jsx";
+
 export default function WeatherCard({ weather }) {
   if (!weather) return null;
 
@@ -13,7 +13,7 @@ export default function WeatherCard({ weather }) {
 
   const weatherImages = {
     Clear:
-      "https://media.istockphoto.com/id/1026330454/photo/clouds-and-bright-blue-sky-background-panoramic-angle-view.jpg?s=612x612&w=0&k=20&c=IfqTMDvX6y9oqJPW3Up2_2X59IUlV3IchDXQIoEIE-g=",
+      "https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=600&auto=format&fit=crop&q=60",
 
     Clouds:
       "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=600&q=55&auto=format&fit=crop",
@@ -55,18 +55,29 @@ export default function WeatherCard({ weather }) {
   return (
     <Box
       sx={{
+        maxHeight: "100dvh",
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        mt: 5,
+        mt: 4,
       }}
     >
       <Card
         sx={{
-          width: "100%",
+          
+          minWidth: {
+            xs: 330, // mobile
+            sm: 700, // 📲 tablet bigger
+            md: 500, // desktop back to normal (optional)
+            xl:800
+          },
 
-          maxWidth: 420,
+           minHeight: {
+              xs: 350, // mobile
+              sm: 800, // 📲 tablet taller
+              md: 100,
+            },
 
           /* 🔮 Glass effect */
           background: "rgba(255, 255, 255, 0.25)",
@@ -82,9 +93,11 @@ export default function WeatherCard({ weather }) {
         <CardMedia
           component="img"
           sx={{
-            height: {
-              xs: 250,
-              sm: 150,
+            maxHeight: {
+              xs: 210, // mobile
+              sm: 480, // 📲 tablet taller
+              md: 160,
+              xl:300
             },
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
@@ -102,12 +115,12 @@ export default function WeatherCard({ weather }) {
         <CardContent
           sx={{
             p: {
-              xs: 4, // 📱 mobile (16px)
+              xs: 2, // 📱 mobile (16px)
               sm: 1, // 💻 desktop (8px)
             },
             "&:last-child": {
               pb: {
-                xs: 3,
+                xs: 2,
                 sm: 1,
               },
             },
@@ -149,7 +162,6 @@ export default function WeatherCard({ weather }) {
           </Box>
         </CardContent>
       </Card>
-      
     </Box>
   );
 }
