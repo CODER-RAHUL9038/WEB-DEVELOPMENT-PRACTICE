@@ -1,11 +1,14 @@
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Collapse, Typography } from "@mui/material";
 
 export default function SearchButton({ city, setCity, getWeather, error }) {
+  const [touched, setTouched] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    document.activeElement.blur(); // 📱 hides keyboard
     getWeather();
   };
 
@@ -35,6 +38,15 @@ export default function SearchButton({ city, setCity, getWeather, error }) {
           value={city}
           size="small"
           onChange={(e) => setCity(e.target.value)}
+          onBlur={() => setTouched(true)}
+          error={touched && !city}
+          helperText={touched && !city ? "City is required" : ""}
+          slotProps={{
+            input: {
+              inputMode: "search",
+              enterKeyHint: "search",
+            },
+          }}
           sx={{
             maxWidth: 400,
             minWidth: {
@@ -66,7 +78,7 @@ export default function SearchButton({ city, setCity, getWeather, error }) {
               color: "rgba(78, 73, 73, 0.75)",
             },
             "& .MuiInputLabel-root.Mui-focused": {
-              color: "#90caf9",
+              color: "#424040",
             },
           }}
         />
