@@ -3,11 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind</title>
+    <title>Tailwind Css</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body >
-    <div class="bg-green-500 w-20 md:w-150 lg:w-200 h-24 text-red m-4">This a Div</div>
-    
+  <body>
+    <div
+      class="container flex justify-center items-center h-screen text-center w-full"
+    >
+      <!-- card container -->
+      <div
+        class="card-container mx-2 border-2 border-black-900 rounded-lg w-full max-w-2xl"
+      >
+        <div
+          class="card-image flex items-center justify-center text-lg text-white h-20 bg-[#3B9FEE]"
+        >
+          <h1 class="font-bold">News You can Trust.</h1>
+        </div>
+        <!-- card-content -->
+        <div class="card-content my-5">
+          <h2 class="font-semibold text-base md:text-lg my-2">
+            Stay up to date with the Latest!
+          </h2>
+          <p class="text-sm md:text-base px-1">
+            Subscribe to our newsletter for the latest news straight into your
+            inbox
+          </p>
+          <label for="email"></label>
+          <input
+            placeholder="Enter email id"
+            class="bg-[rgb(230,234,242)] text-center p-1 rounded-sm m-3"
+            type="text"
+            id="email"
+          />
+          <br />
+          <button
+            type="button"
+            class="bg-[#3B9FEE] text-white py-1 px-5 md:px-10 rounded-2xl"
+          >
+            Subscribe Now
+          </button>
+          <p class="mt-4">We value your privacy</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
