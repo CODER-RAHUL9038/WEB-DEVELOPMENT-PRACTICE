@@ -1,9 +1,9 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
-  todos: [{ id: "123", task: "code", isDone: false }],
+  todos: [{ id: nanoid(), task: "code", isDone: false }],
 };
 export const todoSlice = createSlice({
-  name: "todo",
+  name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
@@ -18,11 +18,10 @@ export const todoSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
     markAsDone: (state, action) => {
-      state.todos = state.todos.map((todo) => {
-        if (todo.id === action.payload) {
-          todo.isDone = true;
-        }
-      });
+      const todo = state.todos.find((todo) => todo.id === action.payload);
+      if (todo) {
+        todo.isDone = !todo.isDone; // toggles true/false
+      } 
     },
   },
 });
